@@ -16,10 +16,10 @@ public class PlayerController : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         if (h != 0) {
-            GetComponent<Rigidbody>().AddForce(h * transform.right * 10f);
+            transform.eulerAngles += new Vector3(0, h * 1.8f, 0);
         }
         if (v != 0) {
-            GetComponent<Rigidbody>().AddForce(v * transform.forward * 10f);
+            GetComponent<Rigidbody>().AddForce(v * transform.forward * 7f);
         }
     }
 }
