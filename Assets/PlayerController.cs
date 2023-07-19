@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float jumpPower = 5f;
     public float roationSpeed = 1.8f;
     public float forwardSpeed = 7f;
     public float maxVelocity = 7f;
 
+    private Rigidbody myRigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        
+        myRigidbody = GetComponent<Rigidbody>();
     }
+    private void Update() {
+        // very buggy. can make you double jump sometimes. use a line cast
+        if (Input.GetButtonDown("Jump") && Mathf.Abs(myRigidbody.velocity.y) < 0.1f) {
+            myRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+        }
 
+        if (Input.GetButtonUp("Jump") && myRigidbody.velocity.y > 0.1f) {
+            myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, myRigidbody.velocity.y * 0.5f, myRigidbody.velocity.z);
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -23,12 +34,17 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles += new Vector3(0, h * roationSpeed, 0);
         }
         if (v != 0) {
-            GetComponent<Rigidbody>().AddForce(v * transform.forward * forwardSpeed, ForceMode.Impulse);
-            GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(GetComponent<Rigidbody>().velocity, maxVelocity);
-            //GetComponent<Rigidbody>().velocity = v * transform.forward * forwardSpeed;
-            //GetComponent<Rigidbody>().AddForce(v * transform.forward * forwardSpeed);
+            myRigidbody.AddForce(v * transform.forward * forwardSpeed, ForceMode.Impulse);
+
+
+            //myRigidbody.velocity = v * transform.forward * forwardSpeed;
+            //myRigidbody.AddForce(v * transform.forward * forwardSpeed);
         } else {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
         }
+        // max speed
+        myRigidbody.velocity = new Vector3(Mathf.Clamp(myRigidbody.velocity.x, -maxVelocity, maxVelocity),
+            myRigidbody.velocity.y,
+            Mathf.Clamp(myRigidbody.velocity.z, -maxVelocity, maxVelocity));
     }
 }

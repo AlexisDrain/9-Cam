@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Button-Start
+  m_Controller: {fileID: 9100000, guid: 819cbd75f362fdc46867d92259013940, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 74151787339007032, guid: 819cbd75f362fdc46867d92259013940,
+      type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f88bc017c850da04db92f3bdbb7e0002, type: 2}
