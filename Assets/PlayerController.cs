@@ -43,8 +43,7 @@ public class PlayerController : MonoBehaviour
             myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
         }
         // max speed
-        myRigidbody.velocity = new Vector3(Mathf.Clamp(myRigidbody.velocity.x, -maxVelocity, maxVelocity),
-            myRigidbody.velocity.y,
-            Mathf.Clamp(myRigidbody.velocity.z, -maxVelocity, maxVelocity));
+        Vector3 velocityClamped = Vector3.ClampMagnitude(myRigidbody.velocity, maxVelocity);
+        myRigidbody.velocity = new Vector3(velocityClamped.x, myRigidbody.velocity.y, velocityClamped.z);
     }
 }
