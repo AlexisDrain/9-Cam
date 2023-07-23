@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f7e57b4e558c63c4d8ce67e4c00785b9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Tschichold Alternate
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ef7f869966eaf954cb86f27d5db9c046, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
