@@ -1,4 +1,10 @@
 
+Textures:
+https://opengameart.org/content/2-seamless-lava-tiles
+https://opengameart.org/content/wall-grass-rock-stone-wood-and-dirt-480
+
+SFX
+
 Explosion SFX:
 Sonniss 2023 / BluezoneCorp - Detonation - Explosion / Bluezone_BC0277_explosion_urban_004_02
 Sonniss 2017 / Gamemaster Audio -  Explosion Sound Pack / explosion_large_no_tail_03

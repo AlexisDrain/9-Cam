@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
     }
     private void Update() {
+        if (GameManager.playerIsAlive == false) {
+            return;
+        }
+
         // very buggy. can make you double jump sometimes. use a line cast
         if (Input.GetButtonDown("Jump") && Mathf.Abs(myRigidbody.velocity.y) < 0.1f) {
             myRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
@@ -28,6 +32,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(GameManager.playerIsAlive == false) {
+            return;
+        }
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         if (h != 0) {
@@ -35,7 +43,6 @@ public class PlayerController : MonoBehaviour
         }
         if (v != 0) {
             myRigidbody.AddForce(v * transform.forward * forwardSpeed, ForceMode.Impulse);
-
 
             //myRigidbody.velocity = v * transform.forward * forwardSpeed;
             //myRigidbody.AddForce(v * transform.forward * forwardSpeed);

@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
+    public static Vector3 playerReviveLocation;
+    public static Quaternion playerReviveRotation;
+
     public static GameObject gameManagerObj;
     private static Pool pool_LoudAudioSource;
     public static GameObject player;
@@ -18,6 +22,8 @@ public class GameManager : MonoBehaviour
         gameManagerObj = gameObject;
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
         player = GameObject.Find("Player");
+        playerReviveLocation = player.transform.position;
+        playerReviveRotation = player.transform.rotation;
     }
     public void KillPlayer() {
         print("player must die");
@@ -26,6 +32,11 @@ public class GameManager : MonoBehaviour
     public void RevivePlayer() {
         print("Revive Player");
         playerIsAlive = true;
+        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        player.GetComponent<Rigidbody>().rotation = playerReviveRotation;
+        player.transform.rotation = playerReviveRotation;
+        player.GetComponent<Rigidbody>().position = playerReviveLocation;
+        player.transform.position = playerReviveLocation;
         playerRevive.Invoke();
     }
 
