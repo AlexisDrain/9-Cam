@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -52,5 +53,10 @@ public class PlayerController : MonoBehaviour
         // max speed
         Vector3 velocityClamped = Vector3.ClampMagnitude(myRigidbody.velocity, maxVelocity);
         myRigidbody.velocity = new Vector3(velocityClamped.x, myRigidbody.velocity.y, velocityClamped.z);
+        
+        if(transform.position.y < -15f) {
+            print("Player is falling");
+            GameManager.KillPlayer();
+        }
     }
 }

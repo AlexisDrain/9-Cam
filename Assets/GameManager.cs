@@ -25,11 +25,11 @@ public class GameManager : MonoBehaviour
         playerReviveLocation = player.transform.position;
         playerReviveRotation = player.transform.rotation;
     }
-    public void KillPlayer() {
+    public static void KillPlayer() {
         print("player must die");
         playerIsAlive = false;
     }
-    public void RevivePlayer() {
+    public static void RevivePlayer() {
         print("Revive Player");
         playerIsAlive = true;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
     public void Update() {
         if(playerIsAlive == false) {
             if (Input.GetButtonDown("Revive") || Input.GetButtonDown("Jump")) {
+                RevivePlayer();
+            }
+        } else {
+            if (Input.GetButtonDown("Revive")) {
+                print("player is not dead but pressed Revive");
                 RevivePlayer();
             }
         }

@@ -17,7 +17,7 @@ public class PlayerEnemyCollision : MonoBehaviour
 		}
 
         if (col.CompareTag("Enemy")) {
-			GameManager.gameManagerObj.GetComponent<GameManager>().KillPlayer();
+			GameManager.KillPlayer();
 			
 		}
 	}
