@@ -21,10 +21,11 @@ public class EntityFaller : MonoBehaviour {
         startingPosition = transform.position;
         myRigidbody.velocity = Vector3.zero;
 
-        //GameManagerChasm.resetEnemyCollisions.AddListener(ResetEntity);
+        GameManager.playerRevive.AddListener(ResetEntity);
     }
     public void ResetEntity() {
         isActive = false;
+        myRigidbody.isKinematic = true;
         myRigidbody.useGravity = false;
         transform.rotation = Quaternion.identity;
         myRigidbody.rotation = Quaternion.identity;
@@ -37,8 +38,10 @@ public class EntityFaller : MonoBehaviour {
     public void FixedUpdate() {
 
         if (isActive == false
+            //&& GameManager.player.transform.position.z > transform.position.z - distanceFromPlayerToActivate) {
             && Vector3.Distance(GameManager.player.transform.position, transform.position) < distanceFromPlayerToActivate) {
-            isActive = true;
+                isActive = true;
+            myRigidbody.isKinematic = false;
             myRigidbody.useGravity = true;
             GameManager.SpawnLoudAudio(fallSFX);
         }
