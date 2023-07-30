@@ -3,15 +3,17 @@ Textures:
 https://opengameart.org/content/2-seamless-lava-tiles
 https://opengameart.org/content/wall-grass-rock-stone-wood-and-dirt-480
 
-SFX
-
-Explosion SFX:
+SFX:
+-Explosion SFX:
 Sonniss 2023 / BluezoneCorp - Detonation - Explosion / Bluezone_BC0277_explosion_urban_004_02
 Sonniss 2017 / Gamemaster Audio -  Explosion Sound Pack / explosion_large_no_tail_03
 
-
-Rock fall sound:
+-Rock fall sound:
 Sonniss\Alexander Kopeikin - Rocks - rock tumble down debris long 06
 
-Crunchy, chiptune sound effects like Lava:
+-Crunchy, chiptune sound effects like Lava:
 BFXR
+
+Fonts:
+- Roboto-Black - Apache License Version 2.0
+- Tschichold Alt Bold
