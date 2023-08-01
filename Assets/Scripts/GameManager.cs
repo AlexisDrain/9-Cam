@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     private static Pool pool_LoudAudioSource;
     public static GameObject player;
     public static GameObject worldObj;
+    public static GameObject canvasMenu;
+
+    
 
     public static bool playerIsAlive = true;
     public bool cheatMode = true;
@@ -26,12 +29,13 @@ public class GameManager : MonoBehaviour
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
         player = GameObject.Find("Player");
         worldObj = GameObject.Find("World");
+        canvasMenu = GameObject.Find("CanvasMenu");
 
         currentLevel = levelList[0];
         playerCheckpoint = currentLevel.GetComponent<LevelValues>().firstPlayerCheckpoint;
         checkpointCameraBundle = currentLevel.GetComponent<LevelValues>().firstCameraBundle;
 
-        NewGame();
+        //NewGame();
     }
     public static void KillPlayer() {
         print("player must die");
@@ -87,6 +91,8 @@ public class GameManager : MonoBehaviour
     }
     public void NewGame() {
         print("New Game: Spawn intro Level");
+
+        canvasMenu.SetActive(false);
 
         for (int i = 0; i < GameManager.worldObj.transform.childCount; i++) {
             Destroy(GameManager.worldObj.transform.GetChild(i).gameObject);
