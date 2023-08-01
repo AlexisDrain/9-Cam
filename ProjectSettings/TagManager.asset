@@ -29,13 +29,13 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - CamTopRight
+  - CamTop
+  - CamTopLeft
+  - CamRight
+  - CamMiddle
+  - CamLeft
+  - CamBottomRight
   - CamBottom
   - CamBottomLeft
   m_SortingLayers:
