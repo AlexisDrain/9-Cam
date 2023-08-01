@@ -6,24 +6,32 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-    public static Vector3 playerReviveLocation;
-    public static Quaternion playerReviveRotation;
+    public static Transform playerCheckpoint;
+    public static Transform checkpointCameraBundle;
+    public static GameObject currentLevel;
 
     public static GameObject gameManagerObj;
     private static Pool pool_LoudAudioSource;
     public static GameObject player;
+    public static GameObject worldObj;
 
     public static bool playerIsAlive = true;
+    public bool cheatMode = true;
 
     public static UnityEvent playerRevive = new UnityEvent(); 
+    public List<GameObject> levelList;
 
-    void Awake()
-    {
+    void Awake() {
         gameManagerObj = gameObject;
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
         player = GameObject.Find("Player");
-        playerReviveLocation = player.transform.position;
-        playerReviveRotation = player.transform.rotation;
+        worldObj = GameObject.Find("World");
+
+        currentLevel = levelList[0];
+        playerCheckpoint = currentLevel.GetComponent<LevelValues>().firstPlayerCheckpoint;
+        checkpointCameraBundle = currentLevel.GetComponent<LevelValues>().firstCameraBundle;
+
+        NewGame();
     }
     public static void KillPlayer() {
         print("player must die");
@@ -33,10 +41,13 @@ public class GameManager : MonoBehaviour
         print("Revive Player");
         playerIsAlive = true;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        player.GetComponent<Rigidbody>().rotation = playerReviveRotation;
-        player.transform.rotation = playerReviveRotation;
-        player.GetComponent<Rigidbody>().position = playerReviveLocation;
-        player.transform.position = playerReviveLocation;
+        player.GetComponent<Rigidbody>().rotation = playerCheckpoint.rotation;
+        player.transform.rotation = playerCheckpoint.rotation;
+        player.GetComponent<Rigidbody>().position = playerCheckpoint.position;
+        player.transform.position = playerCheckpoint.position;
+
+        GameManager.checkpointCameraBundle.gameObject.SetActive(true);
+
         playerRevive.Invoke();
     }
 
@@ -66,6 +77,29 @@ public class GameManager : MonoBehaviour
                 RevivePlayer();
             }
         }
+
+        if(cheatMode == true) {
+            if((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+                && (Input.GetKeyDown(KeyCode.F3) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))) {
+                NewGame();
+            }
+        }
+    }
+    public void NewGame() {
+        print("New Game: Spawn intro Level");
+
+        for (int i = 0; i < GameManager.worldObj.transform.childCount; i++) {
+            Destroy(GameManager.worldObj.transform.GetChild(i).gameObject);
+        }
+
+        GameManager.currentLevel = levelList[0];
+        GameManager.currentLevel = GameObject.Instantiate(GameManager.currentLevel, new Vector3(0f, 0f, 0f), Quaternion.identity, GameManager.worldObj.transform);
+
+        // start game
+        GameManager.playerCheckpoint = GameManager.currentLevel.GetComponent<LevelValues>().firstPlayerCheckpoint;
+        GameManager.checkpointCameraBundle = GameManager.currentLevel.GetComponent<LevelValues>().firstCameraBundle;
+
+        GameManager.RevivePlayer();
     }
     /*
     // Update is called once per frame
