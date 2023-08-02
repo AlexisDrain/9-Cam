@@ -15,9 +15,8 @@ public class GameManager : MonoBehaviour
     public static GameObject player;
     public static GameObject worldObj;
     public static GameObject canvasMenu;
-
+    public static GameObject canvasTopRightTutorial;
     
-
     public static bool playerIsAlive = true;
     public bool cheatMode = true;
 
@@ -30,6 +29,8 @@ public class GameManager : MonoBehaviour
         player = GameObject.Find("Player");
         worldObj = GameObject.Find("World");
         canvasMenu = GameObject.Find("CanvasMenu");
+        canvasTopRightTutorial = GameObject.Find("CanvasTopRightTutorial");
+        canvasTopRightTutorial.SetActive(false);
 
         currentLevel = levelList[0];
         playerCheckpoint = currentLevel.GetComponent<LevelValues>().firstPlayerCheckpoint;
@@ -83,9 +84,13 @@ public class GameManager : MonoBehaviour
         }
 
         if(cheatMode == true) {
-            if((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+            if((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                 && (Input.GetKeyDown(KeyCode.F3) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))) {
                 NewGame();
+            }
+            if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            && (Input.GetKeyDown(KeyCode.F4) || Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))) {
+                GameManager.canvasTopRightTutorial.SetActive(false);
             }
         }
     }
@@ -93,6 +98,7 @@ public class GameManager : MonoBehaviour
         print("New Game: Spawn intro Level");
 
         canvasMenu.SetActive(false);
+        canvasTopRightTutorial.SetActive(true);
 
         for (int i = 0; i < GameManager.worldObj.transform.childCount; i++) {
             Destroy(GameManager.worldObj.transform.GetChild(i).gameObject);
