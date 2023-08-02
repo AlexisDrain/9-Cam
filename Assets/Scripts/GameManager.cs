@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         playerCheckpoint = currentLevel.GetComponent<LevelValues>().firstPlayerCheckpoint;
         checkpointCameraBundle = currentLevel.GetComponent<LevelValues>().firstCameraBundle;
 
+        Time.timeScale = 0f;
         //NewGame();
     }
     public static void KillPlayer() {
@@ -96,6 +97,8 @@ public class GameManager : MonoBehaviour
     }
     public void NewGame() {
         print("New Game: Spawn intro Level");
+
+        Time.timeScale = 1.0f;
 
         canvasMenu.SetActive(false);
         canvasTopRightTutorial.SetActive(true);
