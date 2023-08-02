@@ -10,11 +10,19 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed = 7f;
     public float maxVelocity = 7f;
 
+    private bool isCrouching = false;
+    public float standingHeight = 4f;
+    public float crouchingHeight = 2f;
+
     private Rigidbody myRigidbody;
+    private CapsuleCollider myCapsuleCollider;
+    private Animator girlAnimator;
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
+        myCapsuleCollider = GetComponent<CapsuleCollider>();
+        girlAnimator = transform.Find("Girl3").GetComponent<Animator>();
     }
     private void Update() {
         if (GameManager.playerIsAlive == false) {
@@ -29,14 +37,38 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonUp("Jump") && myRigidbody.velocity.y > 0.1f) {
             myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, myRigidbody.velocity.y * 0.5f, myRigidbody.velocity.z);
         }
+
+        // crouch
+        if (Input.GetButtonDown("Crouch")) {
+            isCrouching = true;
+            girlAnimator.SetTrigger("Crouch");
+            print("sit");
+        }
+        if (Input.GetButtonUp("Crouch")) {
+            isCrouching = false;
+            girlAnimator.SetTrigger("Stand");
+            print("stand");
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(GameManager.playerIsAlive == false) {
+        if (GameManager.playerIsAlive == false) {
             return;
         }
 
+        // crouch
+        if (isCrouching) {
+            if (myCapsuleCollider.height > crouchingHeight + 0.1f) {
+                myCapsuleCollider.height = Mathf.Lerp(myCapsuleCollider.height, crouchingHeight, 0.1f);
+            }
+        } else {
+            if (myCapsuleCollider.height < standingHeight + 0.1f) {
+                myCapsuleCollider.height = Mathf.Lerp(myCapsuleCollider.height, standingHeight, 0.1f);
+            }
+        }
+
+        // regular movement
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         if (h != 0) {
