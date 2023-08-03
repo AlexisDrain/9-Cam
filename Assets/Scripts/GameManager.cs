@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     public static bool playerIsAlive = true;
     public bool cheatMode = true;
 
+    public static LayerMask worldMask;
+    public static LayerMask entityMask;
+    public static LayerMask triggersMask;
+
     public static UnityEvent playerRevive = new UnityEvent(); 
     public List<GameObject> levelList;
 
@@ -31,6 +35,11 @@ public class GameManager : MonoBehaviour
         canvasMenu = GameObject.Find("CanvasMenu");
         canvasTopRightTutorial = GameObject.Find("CanvasTopRightTutorial");
         canvasTopRightTutorial.SetActive(false);
+
+        worldMask = LayerMask.NameToLayer("World");
+        entityMask = LayerMask.NameToLayer("Entity");
+        triggersMask = LayerMask.NameToLayer("Triggers");
+
 
         currentLevel = levelList[0];
         playerCheckpoint = currentLevel.GetComponent<LevelValues>().firstPlayerCheckpoint;
