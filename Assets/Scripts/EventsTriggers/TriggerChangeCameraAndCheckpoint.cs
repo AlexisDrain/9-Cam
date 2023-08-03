@@ -24,6 +24,7 @@ public class TriggerChangeCameraAndCheckpoint : MonoBehaviour
             GameManager.checkpointCameraBundle.gameObject.SetActive(true);
 
             GameManager.canvasTopRightTutorial.SetActive(false);
+            GameManager.canvasCrouchTutorial.SetActive(false);
         }
     }
 }

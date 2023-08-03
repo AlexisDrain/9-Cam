@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public static GameObject worldObj;
     public static GameObject canvasMenu;
     public static GameObject canvasTopRightTutorial;
-    
+    public static GameObject canvasCrouchTutorial;
+
     public static bool playerIsAlive = true;
     public bool cheatMode = true;
 
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour
         canvasMenu = GameObject.Find("CanvasMenu");
         canvasTopRightTutorial = GameObject.Find("CanvasTopRightTutorial");
         canvasTopRightTutorial.SetActive(false);
+        canvasCrouchTutorial = GameObject.Find("CanvasCrouchTutorial");
+        canvasCrouchTutorial.SetActive(false);
 
         worldMask = LayerMask.NameToLayer("World");
         entityMask = LayerMask.NameToLayer("Entity");
