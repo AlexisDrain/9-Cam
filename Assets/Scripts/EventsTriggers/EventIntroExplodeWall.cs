@@ -11,6 +11,8 @@ public class EventIntroExplodeWall : MonoBehaviour
     public GameObject oldPipe;
     public GameObject newPipe;
 
+    public AudioClip explosionClip;
+
     private bool hasBeenActivated = false;
 
     void Start()
@@ -42,5 +44,7 @@ public class EventIntroExplodeWall : MonoBehaviour
 
         newWall.SetActive(true);
         newPipe.SetActive(true);
+
+        GameManager.SpawnLoudAudio(explosionClip, Vector2.zero, 0.5f);
     }
 }
