@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayAudioSourceSFX: MonoBehaviour {
 
-	public bool chasm = false;
 	public float overrideAudioSourceVolume = 1f;
 	//private Transform myTransform;
 

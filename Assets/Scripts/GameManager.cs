@@ -116,7 +116,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
 
         canvasMenu.SetActive(false);
-        canvasTopRightTutorial.SetActive(true);
 
         for (int i = 0; i < GameManager.worldObj.transform.childCount; i++) {
             Destroy(GameManager.worldObj.transform.GetChild(i).gameObject);

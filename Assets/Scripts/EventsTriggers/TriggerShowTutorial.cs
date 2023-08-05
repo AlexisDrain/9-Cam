@@ -6,11 +6,15 @@ using UnityEngine.Events;
 public class TriggerShowTutorial : MonoBehaviour
 {
     public bool crouchTutorial = true;
+    public bool walkTutorial = false;
     public bool jumpTutorial = false;
     public bool hideTutorials = false;
     void OnTriggerEnter(Collider otherCollider) {
         if (otherCollider.CompareTag("Player")) {
-            if(crouchTutorial) {
+            if (walkTutorial) {
+                GameManager.canvasTopRightTutorial.SetActive(true);
+            }
+            if (crouchTutorial) {
                 GameManager.canvasCrouchTutorial.SetActive(true);
             }
             if (jumpTutorial) {
