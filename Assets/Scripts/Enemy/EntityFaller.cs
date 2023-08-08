@@ -19,12 +19,15 @@ public class EntityFaller : MonoBehaviour {
         
         isActive = false;
         startingPosition = transform.position;
-        myRigidbody.velocity = Vector3.zero;
 
         GameManager.playerRevive.AddListener(ResetEntity);
     }
     public void ResetEntity() {
         isActive = false;
+        if (myRigidbody.isKinematic == false) {
+            //Setting linear velocity of a kinematic body is not supported.
+            myRigidbody.velocity = Vector3.zero;
+        }
         myRigidbody.isKinematic = true;
         myRigidbody.useGravity = false;
         transform.rotation = Quaternion.identity;
@@ -42,6 +45,7 @@ public class EntityFaller : MonoBehaviour {
             && Vector3.Distance(GameManager.player.transform.position, transform.position) < distanceFromPlayerToActivate) {
                 isActive = true;
             myRigidbody.isKinematic = false;
+            myRigidbody.velocity = Vector3.zero;
             myRigidbody.useGravity = true;
             GameManager.SpawnLoudAudio(fallSFX);
         }
