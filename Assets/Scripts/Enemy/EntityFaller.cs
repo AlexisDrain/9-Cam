@@ -25,7 +25,7 @@ public class EntityFaller : MonoBehaviour {
     public void ResetEntity() {
         isActive = false;
         if (myRigidbody.isKinematic == false) {
-            //Setting linear velocity of a kinematic body is not supported.
+            //Setting linear velocity of a kinematic body is not supported. So check it's not kinematic first.
             myRigidbody.velocity = Vector3.zero;
         }
         myRigidbody.isKinematic = true;
