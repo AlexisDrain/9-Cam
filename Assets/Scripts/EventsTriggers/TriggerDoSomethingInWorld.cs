@@ -30,6 +30,9 @@ public class TriggerDoSomethingInWorld : MonoBehaviour
                 hasBeenTriggered = true;
             }
 
+        } else {
+            onTriggerEnter.Invoke();
+            hasBeenTriggered = true;
         }
     }
 }

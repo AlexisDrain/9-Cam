@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public static GameObject gameManagerObj;
     private static Pool pool_LoudAudioSource;
+    public static Pool pool_Bullets;
     public static GameObject player;
     public static GameObject worldObj;
     public static GameObject canvasMenu;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     void Awake() {
         gameManagerObj = gameObject;
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
+        pool_Bullets = transform.Find("Pool_Bullets").GetComponent<Pool>();
         player = GameObject.Find("Player");
         worldObj = GameObject.Find("World");
         canvasMenu = GameObject.Find("CanvasMenu");
