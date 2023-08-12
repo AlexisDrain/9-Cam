@@ -6,6 +6,7 @@ public class TriggerChangeCameraAndCheckpoint : MonoBehaviour
 {
     public Transform newCameraBundle;
     public Transform newPlayerCheckpoint;
+    public bool isTurret = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,12 @@ public class TriggerChangeCameraAndCheckpoint : MonoBehaviour
             GameManager.canvasTopRightTutorial.SetActive(false);
             GameManager.canvasCrouchTutorial.SetActive(false);
             GameManager.canvasJumpTutorial.SetActive(false);
-            
+
+            if (isTurret) {
+                GameManager.canvasCrosshair.SetActive(true);
+            } else {
+                GameManager.canvasCrosshair.SetActive(false);
+            }
         }
     }
 }

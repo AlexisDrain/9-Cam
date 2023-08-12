@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class CameraPlayerInteraction : MonoBehaviour
 {
+
     private bool isLookingAtPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        // if (isTurret) {
+        //     GameManager.canvasCrosshair.SetActive(true);
+        // }
     }
 
     // Update is called once per frame

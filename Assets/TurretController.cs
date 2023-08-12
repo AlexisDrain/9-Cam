@@ -25,6 +25,12 @@ public class TurretController : MonoBehaviour
         } else {
             target = overrideTarget;
         }
+
+        ResetEntity();
+        GameManager.playerRevive.AddListener(ResetEntity);
+    }
+    public void ResetEntity() {
+        shotCooldown = defaultActiveCooldown;
     }
 
     // Update is called once per frame
@@ -49,7 +55,7 @@ public class TurretController : MonoBehaviour
                 shotCooldown = defaultActiveCooldown;
                 return; // restart this function so that we don't shoot immediately
             }
-            print(hit.collider.name);
+
         }
 
         if (isActive == false || GameManager.playerIsAlive == false) {
