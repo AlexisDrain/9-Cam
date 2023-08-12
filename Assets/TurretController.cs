@@ -11,6 +11,7 @@ public class TurretController : MonoBehaviour
     public float bulletForce = 15f;
     public float defaultActiveCooldown = 3.0f;
     public float defaultShotCooldown = 1.0f;
+    public AudioClip bulletShootSFX;
 
     private Transform target;
     private float shotCooldown = 0f;
@@ -36,10 +37,13 @@ public class TurretController : MonoBehaviour
             if (hit.collider.CompareTag("Player")) {
                 isActive = true;
                 shotCooldown = defaultActiveCooldown;
+                return; // restart this function so that we don't shoot immediately
             }
         }
 
         if (isActive == false || GameManager.playerIsAlive == false) {
+            shotCooldown = defaultActiveCooldown;
+            isActive = false;
             return;
         }
         
@@ -50,5 +54,8 @@ public class TurretController : MonoBehaviour
         bullet.GetComponent<Rigidbody>().velocity = Vector3.zero;
         bullet.GetComponent<Rigidbody>().position = bulletStart.position;
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletForce, ForceMode.Impulse);
+
+        GetComponent<AudioSource>().clip = bulletShootSFX;
+        GetComponent<AudioSource>().PlayWebGL();
     }
 }
