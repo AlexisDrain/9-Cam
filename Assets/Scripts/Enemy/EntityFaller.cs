@@ -34,7 +34,6 @@ public class EntityFaller : MonoBehaviour {
         myRigidbody.rotation = Quaternion.identity;
         transform.position = startingPosition;
         myRigidbody.position = startingPosition;
-        myRigidbody.velocity = Vector3.zero;
     }
 
 

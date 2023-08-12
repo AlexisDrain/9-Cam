@@ -10,8 +10,6 @@ public class TriggerWait : MonoBehaviour {
     public bool resetWithPlayer = true;
     public bool startOnEnable = true;
 
-    private float currentTimeWaiting = 0f;
-
     void Start() {
         if (startOnEnable) {
             StartCoroutine(Countdown());

@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     public static void RevivePlayer() {
         print("Revive Player");
         playerIsAlive = true;
+        player.GetComponent<PlayerEnemyCollision>().health = 3;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.GetComponent<Rigidbody>().rotation = playerCheckpoint.rotation;
         player.transform.rotation = playerCheckpoint.rotation;

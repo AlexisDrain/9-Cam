@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class PlayerEnemyCollision : MonoBehaviour
 {
+	public int health = 3;
 
     void OnTriggerEnter(Collider col)
 	{
@@ -20,5 +21,12 @@ public class PlayerEnemyCollision : MonoBehaviour
 			GameManager.KillPlayer();
 			
 		}
-	}
+		if (col.CompareTag("Bullet")) {
+			print("Player took a bullet");
+			health -= 1;
+			if (health <= 0) {
+                GameManager.KillPlayer();
+            }
+        }
+    }
 }

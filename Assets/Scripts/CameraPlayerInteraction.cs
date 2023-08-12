@@ -18,13 +18,13 @@ public class CameraPlayerInteraction : MonoBehaviour
         RaycastHit hit;
         if(isLookingAtPlayer == false) {
             Physics.Linecast(transform.position, GameManager.player.transform.position, out hit, (1 << GameManager.worldMask)+ (1 << GameManager.entityMask));
-            if(hit.collider.CompareTag("Player")) {
+            if(hit.collider && hit.collider.CompareTag("Player")) {
                 GetComponent<CinemachineVirtualCamera>().LookAt = GameManager.player.transform;
                 isLookingAtPlayer = true;
             }
         } else {
             Physics.Linecast(transform.position, GameManager.player.transform.position, out hit, (1 << GameManager.worldMask) + (1 << GameManager.entityMask));
-            if (hit.collider.CompareTag("Player") == false) {
+            if (hit.collider && hit.collider.CompareTag("Player") == false) {
                 GetComponent<CinemachineVirtualCamera>().LookAt = null;
                 isLookingAtPlayer = false;
             }
