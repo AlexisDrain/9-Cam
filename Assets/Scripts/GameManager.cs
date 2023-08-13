@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public static GameObject canvasCrouchTutorial;
     public static GameObject canvasJumpTutorial;
     public static GameObject canvasCrosshair;
+    public static GameObject canvasScreenTransition;
 
     public static bool playerIsAlive = true;
     public bool cheatMode = true;
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
         canvasJumpTutorial.SetActive(false);
         canvasCrosshair = GameObject.Find("CanvasCrosshair");
         canvasCrosshair.SetActive(false);
+        canvasScreenTransition = GameObject.Find("CanvasScreenTransition");
 
         worldMask = LayerMask.NameToLayer("World");
         entityMask = LayerMask.NameToLayer("Entity");
@@ -120,16 +122,24 @@ public class GameManager : MonoBehaviour
             if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             && (Input.GetKeyDown(KeyCode.F2) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))) {
                 currentLevelInt += 1;
-                GameManager.SetNewLevel(currentLevelInt);
+                GameManager.gameManagerObj.GetComponent<GameManager>().SetNewLevel(currentLevelInt);
             }
         }
     }
-    public static void SetNewLevel(int level) {
-
+    public void SetNewLevel(int level) {
+        currentLevelInt = level;
+        StartCoroutine(ScreenTransition());
+    }
+    public IEnumerator ScreenTransition() {
+        print("start screen transition");
+        canvasScreenTransition.GetComponent<Animator>().SetTrigger("FadeInThenOut");
+        yield return new WaitForSecondsRealtime(0.5f);
+        SwitchLevel(currentLevelInt);
+        print("end screen transition");
+    }
+    public void SwitchLevel(int level) {
         Time.timeScale = 1.0f;
         canvasMenu.SetActive(false);
-
-        currentLevelInt = level;
 
         for (int i = 0; i < GameManager.worldObj.transform.childCount; i++) {
             Destroy(GameManager.worldObj.transform.GetChild(i).gameObject);

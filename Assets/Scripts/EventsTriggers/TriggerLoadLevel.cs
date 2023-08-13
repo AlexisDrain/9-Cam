@@ -7,7 +7,8 @@ public class TriggerLoadLevel : MonoBehaviour
     // Start is called before the first frame update
     public void StartNewLevel(int level)
     {
-        GameManager.SetNewLevel(level);
+
+        GameManager.gameManagerObj.GetComponent<GameManager>().SetNewLevel(level);
     }
 
 }

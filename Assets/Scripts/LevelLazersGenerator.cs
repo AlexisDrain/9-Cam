@@ -67,6 +67,6 @@ public class LevelLazersGenerator : MonoBehaviour
         Destroy(lazerCurrent);
 
         doorOpen = true;
-        doorAnimator.SetTrigger("OpenDoor");
+        doorAnimator.SetTrigger("OpenDoorNHandle");
     }
 }
