@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public static GameObject canvasCrosshair;
     public static GameObject canvasScreenTransition;
     public static GameObject canvasDeath;
+    public static GameObject canvasLevelName;
 
     public static bool playerIsAlive = true;
     public bool cheatMode = true;
@@ -52,8 +54,9 @@ public class GameManager : MonoBehaviour
         canvasScreenTransition = GameObject.Find("CanvasScreenTransition");
         canvasDeath = GameObject.Find("CanvasDeath");
         canvasDeath.SetActive(false);
+        canvasLevelName = GameObject.Find("CanvasLevelName/BigLevelNameText");
+        canvasLevelName.GetComponent<Text>().enabled = false;
 
-        
 
         worldMask = LayerMask.NameToLayer("World");
         entityMask = LayerMask.NameToLayer("Entity");
@@ -155,9 +158,13 @@ public class GameManager : MonoBehaviour
         GameManager.currentLevel = GameManager.gameManagerObj.GetComponent<GameManager>().levelList[level];
         GameManager.currentLevel = GameObject.Instantiate(GameManager.currentLevel, new Vector3(0f, 0f, 0f), Quaternion.identity, GameManager.worldObj.transform);
 
+
         // start game
         GameManager.playerCheckpoint = GameManager.currentLevel.GetComponent<LevelValues>().firstPlayerCheckpoint;
         GameManager.checkpointCameraBundle = GameManager.currentLevel.GetComponent<LevelValues>().firstCameraBundle;
+        if(GameManager.currentLevel.GetComponent<LevelValues>().levelName != "") {
+            canvasLevelName.GetComponent<ShowLevelName>().ShowLevel(GameManager.currentLevel.GetComponent<LevelValues>().levelName);
+        }
 
         GameManager.canvasTopRightTutorial.SetActive(false);
         GameManager.canvasCrouchTutorial.SetActive(false);
