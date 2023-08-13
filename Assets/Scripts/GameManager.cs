@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public static GameObject canvasJumpTutorial;
     public static GameObject canvasCrosshair;
     public static GameObject canvasScreenTransition;
+    public static GameObject canvasDeath;
 
     public static bool playerIsAlive = true;
     public bool cheatMode = true;
@@ -49,6 +50,10 @@ public class GameManager : MonoBehaviour
         canvasCrosshair = GameObject.Find("CanvasCrosshair");
         canvasCrosshair.SetActive(false);
         canvasScreenTransition = GameObject.Find("CanvasScreenTransition");
+        canvasDeath = GameObject.Find("CanvasDeath");
+        canvasDeath.SetActive(false);
+
+        
 
         worldMask = LayerMask.NameToLayer("World");
         entityMask = LayerMask.NameToLayer("Entity");
@@ -65,11 +70,13 @@ public class GameManager : MonoBehaviour
     public static void KillPlayer() {
         print("player must die");
         playerIsAlive = false;
+        GameManager.canvasDeath.SetActive(true);
         GameManager.player.GetComponent<PlayerController>().graphicGirl.SetActive(false);
     }
     public static void RevivePlayer() {
         print("Revive Player");
         playerIsAlive = true;
+        GameManager.canvasDeath.SetActive(false);
         GameManager.player.GetComponent<PlayerController>().graphicGirl.SetActive(true);
         player.GetComponent<PlayerEnemyCollision>().health = 3;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
