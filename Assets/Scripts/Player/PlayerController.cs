@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float standingHeight = 4f;
     public float crouchingHeight = 2f;
 
+    public GameObject graphicGirl;
     private Rigidbody myRigidbody;
     private CapsuleCollider myCapsuleCollider;
     private Animator girlAnimator;

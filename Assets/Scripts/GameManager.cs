@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static Transform playerCheckpoint;
     public static Transform checkpointCameraBundle;
     public static GameObject currentLevel;
+    public static int currentLevelInt;
 
     public static GameObject gameManagerObj;
     private static Pool pool_LoudAudioSource;
@@ -62,10 +63,12 @@ public class GameManager : MonoBehaviour
     public static void KillPlayer() {
         print("player must die");
         playerIsAlive = false;
+        GameManager.player.GetComponent<PlayerController>().graphicGirl.SetActive(false);
     }
     public static void RevivePlayer() {
         print("Revive Player");
         playerIsAlive = true;
+        GameManager.player.GetComponent<PlayerController>().graphicGirl.SetActive(true);
         player.GetComponent<PlayerEnemyCollision>().health = 3;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.GetComponent<Rigidbody>().rotation = playerCheckpoint.rotation;
@@ -114,27 +117,42 @@ public class GameManager : MonoBehaviour
             && (Input.GetKeyDown(KeyCode.F4) || Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))) {
                 GameManager.canvasTopRightTutorial.SetActive(false);
             }
+            if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            && (Input.GetKeyDown(KeyCode.F2) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))) {
+                currentLevelInt += 1;
+                GameManager.SetNewLevel(currentLevelInt);
+            }
         }
     }
-    public void NewGame() {
-        print("New Game: Spawn intro Level");
+    public static void SetNewLevel(int level) {
 
         Time.timeScale = 1.0f;
-
         canvasMenu.SetActive(false);
+
+        currentLevelInt = level;
 
         for (int i = 0; i < GameManager.worldObj.transform.childCount; i++) {
             Destroy(GameManager.worldObj.transform.GetChild(i).gameObject);
         }
 
-        GameManager.currentLevel = levelList[0];
+        GameManager.currentLevel = GameManager.gameManagerObj.GetComponent<GameManager>().levelList[level];
         GameManager.currentLevel = GameObject.Instantiate(GameManager.currentLevel, new Vector3(0f, 0f, 0f), Quaternion.identity, GameManager.worldObj.transform);
 
         // start game
         GameManager.playerCheckpoint = GameManager.currentLevel.GetComponent<LevelValues>().firstPlayerCheckpoint;
         GameManager.checkpointCameraBundle = GameManager.currentLevel.GetComponent<LevelValues>().firstCameraBundle;
 
+        GameManager.canvasTopRightTutorial.SetActive(false);
+        GameManager.canvasCrouchTutorial.SetActive(false);
+        GameManager.canvasJumpTutorial.SetActive(false);
+        GameManager.canvasCrosshair.SetActive(false);
+
         GameManager.RevivePlayer();
+    }
+    public void NewGame() {
+        print("New Game: Spawn intro Level");
+
+        SetNewLevel(0);
     }
     /*
     // Update is called once per frame
