@@ -7,6 +7,7 @@ public class TriggerWait : MonoBehaviour {
 
     public float timeToWait = 3f;
     public UnityEvent onTimeEnd;
+    public bool waitForSecondsRealtime = false;
     public bool resetWithPlayer = true;
     public bool startOnEnable = true;
 
@@ -28,7 +29,11 @@ public class TriggerWait : MonoBehaviour {
     }
 
     public IEnumerator Countdown() {
-        yield return new WaitForSeconds(timeToWait);
+        if(waitForSecondsRealtime) {
+            yield return new WaitForSecondsRealtime(timeToWait);
+        } else {
+            yield return new WaitForSeconds(timeToWait);
+        }
         onTimeEnd.Invoke();
     }
 

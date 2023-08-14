@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public static GameObject canvasLevelName;
 
     public static bool playerIsAlive = true;
+    public static bool gameIsPaused = true;
+    public static bool gameHasBeenStartedOnce = false;
     public bool cheatMode = true;
 
     public static LayerMask worldMask;
@@ -109,7 +111,20 @@ public class GameManager : MonoBehaviour
         // audio object will set itself to inactive after done playing.
     }
     public void Update() {
-        if(playerIsAlive == false) {
+
+        if (Input.GetButtonDown("Pause")) {
+            if (gameIsPaused && gameHasBeenStartedOnce == true) {
+                gameIsPaused = false;
+                canvasMenu.SetActive(false);
+                Time.timeScale = 1f;
+            } else {
+                gameIsPaused = true;
+                canvasMenu.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
+
+        if (playerIsAlive == false) {
             if (Input.GetButtonDown("Revive") || Input.GetButtonDown("Jump")) {
                 RevivePlayer();
             }
@@ -150,6 +165,8 @@ public class GameManager : MonoBehaviour
     public void SwitchLevel(int level) {
         Time.timeScale = 1.0f;
         canvasMenu.SetActive(false);
+        gameIsPaused = false;
+        gameHasBeenStartedOnce = true;
 
         for (int i = 0; i < GameManager.worldObj.transform.childCount; i++) {
             Destroy(GameManager.worldObj.transform.GetChild(i).gameObject);
@@ -176,7 +193,14 @@ public class GameManager : MonoBehaviour
     public void NewGame() {
         print("New Game: Spawn intro Level");
 
+        gameHasBeenStartedOnce = true;
+
         SetNewLevel(0);
+    }
+    public void ResumeGame() {
+        Time.timeScale = 1.0f;
+        canvasMenu.SetActive(false);
+        gameIsPaused = false;
     }
     /*
     // Update is called once per frame
