@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &108647447541704457
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +775,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2572
+  m_VersionIndex: 2575
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -963,6 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &312039876406466513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,7 +1337,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1545
+  m_VersionIndex: 1548
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1524,6 +1526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &916746842303624790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,7 +2034,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2617
+  m_VersionIndex: 2620
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2233,6 +2236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &1612995025945277035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,7 +2803,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1146
+  m_VersionIndex: 1149
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3158,7 +3162,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1434
+  m_VersionIndex: 1437
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3319,6 +3323,7 @@ MonoBehaviour:
         m_CallState: 2
   triggerWithPlayer: 1
   resetWithPlayer: 1
+  resetOnEnable: 1
 --- !u!1 &1717548001023705791
 GameObject:
   m_ObjectHideFlags: 0
@@ -3885,7 +3890,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1146
+  m_VersionIndex: 1149
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4147,6 +4152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &2022818130820131679
 GameObject:
   m_ObjectHideFlags: 0
@@ -4519,7 +4525,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2696
+  m_VersionIndex: 2699
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5183,7 +5189,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3597
+  m_VersionIndex: 3600
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5868,6 +5874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &2905894018303016846
 GameObject:
   m_ObjectHideFlags: 0
@@ -5953,6 +5960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &3180234331527227416
 GameObject:
   m_ObjectHideFlags: 0
@@ -6201,7 +6209,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1577
+  m_VersionIndex: 1580
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6368,6 +6376,7 @@ MonoBehaviour:
   firstCameraBundle: {fileID: 4995573730812213593}
   firstPlayerCheckpoint: {fileID: 5080247048641623541}
   levelName: TURRET
+  isTurret: 0
 --- !u!1 &3435670256649114155
 GameObject:
   m_ObjectHideFlags: 0
@@ -6660,7 +6669,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2048
+  m_VersionIndex: 2051
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7012,7 +7021,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2163
+  m_VersionIndex: 2166
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7488,7 +7497,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1344
+  m_VersionIndex: 1347
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7965,7 +7974,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2019
+  m_VersionIndex: 2022
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8226,6 +8235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &4337164593799929626
 GameObject:
   m_ObjectHideFlags: 0
@@ -8476,7 +8486,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2142
+  m_VersionIndex: 2145
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9117,7 +9127,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2068
+  m_VersionIndex: 2071
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9275,6 +9285,7 @@ MonoBehaviour:
         m_CallState: 2
   triggerWithPlayer: 1
   resetWithPlayer: 1
+  resetOnEnable: 1
 --- !u!114 &1006053384597364751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9303,6 +9314,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  waitForSecondsRealtime: 0
   resetWithPlayer: 1
   startOnEnable: 0
 --- !u!114 &6703573891894665532
@@ -9611,7 +9623,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2216
+  m_VersionIndex: 2219
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9829,6 +9841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &4850427890392921530
 GameObject:
   m_ObjectHideFlags: 0
@@ -10077,7 +10090,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2473
+  m_VersionIndex: 2476
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10319,6 +10332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &5015971024215832093
 GameObject:
   m_ObjectHideFlags: 0
@@ -10404,6 +10418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &5223645715505849589
 GameObject:
   m_ObjectHideFlags: 0
@@ -10561,6 +10576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &5558544847338965713
 GameObject:
   m_ObjectHideFlags: 0
@@ -11111,7 +11127,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 5834
+  m_VersionIndex: 5837
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11300,6 +11316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &5842036997891292852
 GameObject:
   m_ObjectHideFlags: 0
@@ -11744,7 +11761,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2918
+  m_VersionIndex: 2921
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12057,6 +12074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &6587949604769697564
 GameObject:
   m_ObjectHideFlags: 0
@@ -12545,7 +12563,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3537
+  m_VersionIndex: 3540
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -13273,7 +13291,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1377
+  m_VersionIndex: 1380
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14328,7 +14346,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 20947
+  m_VersionIndex: 20950
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14799,7 +14817,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1972
+  m_VersionIndex: 1975
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14988,6 +15006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &7799626056198721418
 GameObject:
   m_ObjectHideFlags: 0
@@ -15073,6 +15092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &7829678083368089944
 GameObject:
   m_ObjectHideFlags: 0
@@ -15465,7 +15485,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2504
+  m_VersionIndex: 2507
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -15817,7 +15837,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1677
+  m_VersionIndex: 1680
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -16006,6 +16026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &8106270075425693076
 GameObject:
   m_ObjectHideFlags: 0
@@ -16514,6 +16535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followPlayerThroughWalls: 0
 --- !u!1 &8976324342836385085
 GameObject:
   m_ObjectHideFlags: 0
@@ -18126,7 +18148,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1854
+  m_VersionIndex: 1857
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -18481,7 +18503,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1337
+  m_VersionIndex: 1340
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -18667,11 +18689,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1390368966088603409, guid: b6a4b197af70f92428ddf88cb42a3d9d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3674
+      value: 3677
       objectReference: {fileID: 0}
     - target: {fileID: 2281006140668854142, guid: b6a4b197af70f92428ddf88cb42a3d9d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1334
+      value: 1337
       objectReference: {fileID: 0}
     - target: {fileID: 3576085972861744433, guid: b6a4b197af70f92428ddf88cb42a3d9d, type: 3}
       propertyPath: m_Name
@@ -18723,11 +18745,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6478783594322583014, guid: b6a4b197af70f92428ddf88cb42a3d9d, type: 3}
       propertyPath: m_VersionIndex
-      value: 3769
+      value: 3772
       objectReference: {fileID: 0}
     - target: {fileID: 7434750996136053155, guid: b6a4b197af70f92428ddf88cb42a3d9d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1331
+      value: 1334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18802,7 +18824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_VersionIndex
-      value: 1711
+      value: 1714
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -18888,7 +18910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3624052046268153774, guid: 81e5986c336762349b9942a7ee8df9ac, type: 3}
       propertyPath: m_VersionIndex
-      value: 1294
+      value: 1297
       objectReference: {fileID: 0}
     - target: {fileID: 4423343853161017924, guid: 81e5986c336762349b9942a7ee8df9ac, type: 3}
       propertyPath: m_Name
@@ -19040,7 +19062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7902222845071881326, guid: 77f3ec2868467ed49906bee84c48efaf, type: 3}
       propertyPath: m_VersionIndex
-      value: 1304
+      value: 1307
       objectReference: {fileID: 0}
     - target: {fileID: 8146498513617457804, guid: 77f3ec2868467ed49906bee84c48efaf, type: 3}
       propertyPath: m_Name
@@ -19118,7 +19140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_VersionIndex
-      value: 1714
+      value: 1717
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -19164,7 +19186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464546714829195497, guid: 77cbc612e5772c045a858886143daba4, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2742393027447914233, guid: 77cbc612e5772c045a858886143daba4, type: 3}
       propertyPath: m_RootOrder
@@ -19216,7 +19238,7 @@ PrefabInstance:
       objectReference: {fileID: 13400000, guid: bc984ab07cdc5a94aa0ecc7dd0885dfe, type: 2}
     - target: {fileID: 8660676345805543109, guid: 77cbc612e5772c045a858886143daba4, type: 3}
       propertyPath: m_VersionIndex
-      value: 975
+      value: 978
       objectReference: {fileID: 0}
     - target: {fileID: 8660676345805543109, guid: 77cbc612e5772c045a858886143daba4, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -19228,6 +19250,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8660676345805543109, guid: 77cbc612e5772c045a858886143daba4, type: 3}
       propertyPath: m_SelectedVertices.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122166169845790848, guid: 77cbc612e5772c045a858886143daba4, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -19298,7 +19324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_VersionIndex
-      value: 1711
+      value: 1714
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -19388,7 +19414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_VersionIndex
-      value: 1717
+      value: 1720
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_Faces.Array.size
@@ -20278,7 +20304,7 @@ PrefabInstance:
       objectReference: {fileID: 13400000, guid: bc984ab07cdc5a94aa0ecc7dd0885dfe, type: 2}
     - target: {fileID: 8660676345805543109, guid: 77cbc612e5772c045a858886143daba4, type: 3}
       propertyPath: m_VersionIndex
-      value: 975
+      value: 978
       objectReference: {fileID: 0}
     - target: {fileID: 8660676345805543109, guid: 77cbc612e5772c045a858886143daba4, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -20451,7 +20477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_VersionIndex
-      value: 1711
+      value: 1714
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -20541,7 +20567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_VersionIndex
-      value: 1711
+      value: 1714
       objectReference: {fileID: 0}
     - target: {fileID: 4673505813320583201, guid: 8c389ff9015416646a7060cb1d8373dd, type: 3}
       propertyPath: m_SelectedEdges.Array.size
