@@ -7,6 +7,7 @@ public class TurretController : MonoBehaviour
 {
 
     public bool targetIsPlayer = true;
+    public bool canLookUp = true;
     public Transform overrideTarget;
     public Transform bulletStart;
     public float bulletForce = 15f;
@@ -57,7 +58,13 @@ public class TurretController : MonoBehaviour
             return;
         }
 
-        transform.LookAt(target);
+        if(canLookUp == true) {
+            transform.LookAt(target);
+        } else if (canLookUp == false) {
+            if (target.position.y < transform.position.y) {
+                transform.LookAt(target);
+            }
+        }
 
         if (isActive == true) {
             RaycastHit hit;
