@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     public static GameObject canvasTopRightTutorial;
     public static GameObject canvasCrouchTutorial;
     public static GameObject canvasJumpTutorial;
-    public static GameObject canvasCrosshair;
+    //public static GameObject canvasCrosshair;
+    public static TurretCamManager turretCamManager;
     public static GameObject canvasScreenTransition;
     public static GameObject canvasDeath;
     public static GameObject canvasLevelName;
@@ -51,8 +52,9 @@ public class GameManager : MonoBehaviour
         canvasCrouchTutorial.SetActive(false);
         canvasJumpTutorial = GameObject.Find("CanvasJumpTutorial");
         canvasJumpTutorial.SetActive(false);
-        canvasCrosshair = GameObject.Find("CanvasCrosshair");
-        canvasCrosshair.SetActive(false);
+        turretCamManager = GameObject.Find("TurretCamManager").GetComponent<TurretCamManager>();
+        //canvasCrosshair = GameObject.Find("TurretCamManager/CanvasCrosshair");
+        //canvasCrosshair.SetActive(false);
         canvasScreenTransition = GameObject.Find("CanvasScreenTransition");
         canvasDeath = GameObject.Find("CanvasDeath");
         canvasDeath.SetActive(false);
@@ -182,11 +184,15 @@ public class GameManager : MonoBehaviour
         if(GameManager.currentLevel.GetComponent<LevelValues>().levelName != "") {
             canvasLevelName.GetComponent<ShowLevelName>().ShowLevel(GameManager.currentLevel.GetComponent<LevelValues>().levelName);
         }
+        if (GameManager.currentLevel.GetComponent<LevelValues>().isTurret) {
+            TurretCamManager.EnableMiddleCamera();
+        } else {
+            TurretCamManager.DisableMiddleCamera();
+        }
 
         GameManager.canvasTopRightTutorial.SetActive(false);
         GameManager.canvasCrouchTutorial.SetActive(false);
         GameManager.canvasJumpTutorial.SetActive(false);
-        GameManager.canvasCrosshair.SetActive(false);
 
         GameManager.RevivePlayer();
     }

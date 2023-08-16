@@ -1365,7 +1365,6 @@ GameObject:
   - component: {fileID: 3801479411509491314}
   - component: {fileID: 1571625672502138019}
   - component: {fileID: 5911239612517233629}
-  - component: {fileID: 3207854952245346937}
   m_Layer: 0
   m_Name: DoorHandle2
   m_TagString: Untagged
@@ -1922,28 +1921,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2620735896856006184}
   m_Mesh: {fileID: 0}
---- !u!64 &3207854952245346937
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2620735896856006184}
-  m_Material: {fileID: 13400000, guid: bc984ab07cdc5a94aa0ecc7dd0885dfe, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &3576085972861744433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,7 +1953,7 @@ Transform:
   - {fileID: 3362379741601398853}
   - {fileID: 1894002189233442264}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2712491555393604298
 Animator:
@@ -2012,7 +1989,6 @@ GameObject:
   - component: {fileID: 3582772532790593609}
   - component: {fileID: 7553817540990616051}
   - component: {fileID: 7651910688925017958}
-  - component: {fileID: 3293953904219066512}
   m_Layer: 0
   m_Name: DoorHandle
   m_TagString: Untagged
@@ -2568,26 +2544,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6669006255929591010}
-  m_Mesh: {fileID: 0}
---- !u!64 &3293953904219066512
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6669006255929591010}
-  m_Material: {fileID: 13400000, guid: bc984ab07cdc5a94aa0ecc7dd0885dfe, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}

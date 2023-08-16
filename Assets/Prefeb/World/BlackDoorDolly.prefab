@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8255540877665838643}
   - component: {fileID: 5443249208169650057}
   - component: {fileID: 4378723605214428917}
-  - component: {fileID: 4599236302374103659}
   m_Layer: 0
   m_Name: DoorHandle2
   m_TagString: Untagged
@@ -570,28 +569,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049147497961254317}
   m_Mesh: {fileID: 0}
---- !u!64 &4599236302374103659
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049147497961254317}
-  m_Material: {fileID: 13400000, guid: bc984ab07cdc5a94aa0ecc7dd0885dfe, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &1613761095988475794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,7 +1007,7 @@ Transform:
   - {fileID: 2398103605957792647}
   - {fileID: 6080694711566390117}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &272385827063084731
 Animator:
@@ -1066,7 +1043,6 @@ GameObject:
   - component: {fileID: 6895733781664789648}
   - component: {fileID: 1414080142969273104}
   - component: {fileID: 6179398043710234213}
-  - component: {fileID: 6266874830099753205}
   m_Layer: 0
   m_Name: DoorHandle
   m_TagString: Untagged
@@ -1622,28 +1598,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2626169748743257969}
-  m_Mesh: {fileID: 0}
---- !u!64 &6266874830099753205
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2626169748743257969}
-  m_Material: {fileID: 13400000, guid: bc984ab07cdc5a94aa0ecc7dd0885dfe, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &7918300054674360619
 GameObject:

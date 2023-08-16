@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 4596189400678237615}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &8367179295475227867
 MonoBehaviour:
@@ -941,9 +941,9 @@ MonoBehaviour:
   targetIsPlayer: 1
   overrideTarget: {fileID: 0}
   bulletStart: {fileID: 4596189400678237615}
-  bulletForce: 35
-  defaultActiveCooldown: 2.5
-  defaultShotCooldown: 0.25
+  bulletForce: 40
+  defaultActiveCooldown: 1
+  defaultShotCooldown: 0.2
   bulletShootSFX: {fileID: 8300000, guid: d362abad553a8ab4c84e3ceca658a4be, type: 3}
 --- !u!82 &6089190368631862510
 AudioSource:

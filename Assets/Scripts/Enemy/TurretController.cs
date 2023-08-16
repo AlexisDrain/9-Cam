@@ -1,4 +1,4 @@
-using Cinemachine;
+﻿using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,8 +14,11 @@ public class TurretController : MonoBehaviour
     public float defaultShotCooldown = 1.0f;
     public AudioClip bulletShootSFX;
 
+    [Header("For use by other triggers")]
+    public bool turretIsDisabled = false;
     private Transform target;
     private float shotCooldown = 0f;
+    private float loseTargetCooldown = 0f;
     private bool isActive = false;
     
     void Start()
@@ -31,17 +34,47 @@ public class TurretController : MonoBehaviour
     }
     public void ResetEntity() {
         shotCooldown = defaultActiveCooldown;
+        turretIsDisabled = false;
+        isActive = false;
+    }
+    public void BlackifyTurret() {
+        turretIsDisabled = true;
+        TurretCamManager.BlackifyMiddleCamera();
     }
 
     // Update is called once per frame
     void FixedUpdate() {
+        
+        // demo victim
         if(overrideTarget != null) {
-            // demo victim
             if (target.GetComponent<VictimHealth>().health <= 0) {
                 return;
             }
         }
+        // end demo victim
         
+        if(turretIsDisabled) {
+            return;
+        }
+
+        transform.LookAt(target);
+
+        if (isActive == true) {
+            RaycastHit hit;
+            Physics.Linecast(transform.position, target.transform.position, out hit, (1 << GameManager.entityMask) + (1 << GameManager.worldMask));
+            if (hit.collider && hit.collider.CompareTag("Player")) {
+                // found target
+                loseTargetCooldown = 2f;
+            }
+
+            if (loseTargetCooldown > 0f) {
+                loseTargetCooldown -= Time.deltaTime;
+            }
+            if (loseTargetCooldown <= 0f) {
+                isActive = false;
+            }
+        }
+
         if (shotCooldown > 0.0f) {
             shotCooldown -= Time.deltaTime;
             return;
@@ -51,11 +84,12 @@ public class TurretController : MonoBehaviour
             RaycastHit hit;
             Physics.Linecast(transform.position, target.transform.position, out hit, (1 << GameManager.entityMask) + (1 << GameManager.worldMask));
             if (hit.collider && hit.collider.CompareTag("Player")) {
+                // found target
                 isActive = true;
                 shotCooldown = defaultActiveCooldown;
+                loseTargetCooldown = 2f;
                 return; // restart this function so that we don't shoot immediately
             }
-
         }
 
         if (isActive == false || GameManager.playerIsAlive == false) {
@@ -64,7 +98,6 @@ public class TurretController : MonoBehaviour
             return;
         }
         
-        transform.LookAt(target);
 
         shotCooldown = defaultShotCooldown;
         GameObject bullet = GameManager.pool_Bullets.Spawn(bulletStart.position);

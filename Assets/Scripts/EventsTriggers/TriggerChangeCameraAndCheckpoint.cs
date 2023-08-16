@@ -30,9 +30,9 @@ public class TriggerChangeCameraAndCheckpoint : MonoBehaviour
             GameManager.canvasJumpTutorial.SetActive(false);
 
             if (isTurret) {
-                GameManager.canvasCrosshair.SetActive(true);
+                TurretCamManager.EnableMiddleCamera();
             } else {
-                GameManager.canvasCrosshair.SetActive(false);
+                TurretCamManager.DisableMiddleCamera();
             }
         }
     }

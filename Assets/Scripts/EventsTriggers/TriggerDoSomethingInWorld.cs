@@ -8,6 +8,7 @@ public class TriggerDoSomethingInWorld : MonoBehaviour
     public UnityEvent onTriggerEnter;
     public bool triggerWithPlayer = true;
     public bool resetWithPlayer = true;
+    public bool resetOnEnable = true;
 
     private bool hasBeenTriggered = false;
     // Start is called before the first frame update
@@ -15,6 +16,11 @@ public class TriggerDoSomethingInWorld : MonoBehaviour
         ResetTrigger();
         if (resetWithPlayer) {
             GameManager.playerRevive.AddListener(ResetTrigger);
+        }
+    }
+    private void OnEnable() {
+        if(resetOnEnable) {
+            hasBeenTriggered = false;
         }
     }
     void ResetTrigger() {
@@ -26,6 +32,21 @@ public class TriggerDoSomethingInWorld : MonoBehaviour
         }
         if(triggerWithPlayer) {
             if (otherCollider.CompareTag("Player")) {
+                onTriggerEnter.Invoke();
+                hasBeenTriggered = true;
+            }
+
+        } else {
+            onTriggerEnter.Invoke();
+            hasBeenTriggered = true;
+        }
+    }
+    private void OnCollisionEnter(Collision collision) {
+        if (hasBeenTriggered) {
+            return;
+        }
+        if (triggerWithPlayer) {
+            if (collision.collider.CompareTag("Player")) {
                 onTriggerEnter.Invoke();
                 hasBeenTriggered = true;
             }
