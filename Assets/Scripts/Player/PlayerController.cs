@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody>();
         myCapsuleCollider = GetComponent<CapsuleCollider>();
-        girlAnimator = transform.Find("Girl3").GetComponent<Animator>();
+        girlAnimator = graphicGirl.GetComponent<Animator>();
     }
     private void Update() {
         if (GameManager.playerIsAlive == false) {
@@ -74,14 +74,19 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         if (h != 0) {
             transform.eulerAngles += new Vector3(0, h * roationSpeed, 0);
+            girlAnimator.SetBool("IsWalking", true);
+        } else {
+            girlAnimator.SetBool("IsWalking", false);
         }
         if (v != 0) {
             myRigidbody.AddForce(v * transform.forward * forwardSpeed, ForceMode.Impulse);
 
+            girlAnimator.SetBool("IsWalking", true);
             //myRigidbody.velocity = v * transform.forward * forwardSpeed;
             //myRigidbody.AddForce(v * transform.forward * forwardSpeed);
         } else {
             myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
+            girlAnimator.SetBool("IsWalking", false);
         }
         // max speed
         Vector3 velocityClamped = Vector3.ClampMagnitude(myRigidbody.velocity, maxVelocity);
