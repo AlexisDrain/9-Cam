@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class VictimHealth : MonoBehaviour
 {
+    public Transform victimSpawner;
     public int health = 3;
     public GameObject graphic;
     void Start() {
@@ -21,7 +22,11 @@ public class VictimHealth : MonoBehaviour
         if (col.CompareTag("Bullet")) {
             health -= 1;
             if (health <= 0) {
-                graphic.SetActive(false);
+                GameObject gibs = GameManager.pool_Gibs.Spawn(transform.position);
+                gibs.transform.rotation = transform.rotation;
+
+                transform.position = victimSpawner.position;
+                health = 3;
             }
         }
     }

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static GameObject gameManagerObj;
     private static Pool pool_LoudAudioSource;
     public static Pool pool_Bullets;
+    public static Pool pool_Gibs;
     public static GameObject player;
     public static GameObject worldObj;
     public static GameObject canvasMenu;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         gameManagerObj = gameObject;
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
         pool_Bullets = transform.Find("Pool_Bullets").GetComponent<Pool>();
+        pool_Gibs = transform.Find("Pool_Gibs").GetComponent<Pool>();
         player = GameObject.Find("Player");
         worldObj = GameObject.Find("World");
         canvasMenu = GameObject.Find("CanvasMenu");
@@ -79,6 +81,10 @@ public class GameManager : MonoBehaviour
         playerIsAlive = false;
         GameManager.canvasDeath.SetActive(true);
         GameManager.player.GetComponent<PlayerController>().graphicGirl.SetActive(false);
+        GameManager.player.GetComponent<PlayerController>().shadow.SetActive(false);
+
+        GameObject gibs = GameManager.pool_Gibs.Spawn(GameManager.player.transform.position);
+        gibs.transform.rotation = GameManager.player.transform.rotation;
     }
     public static void RevivePlayer() {
         print("Revive Player");
@@ -178,6 +184,10 @@ public class GameManager : MonoBehaviour
         canvasMenu.SetActive(false);
         gameIsPaused = false;
         gameHasBeenStartedOnce = true;
+
+        GameManager.pool_Bullets.DeactivateAllMembers();
+        GameManager.pool_LoudAudioSource.DeactivateAllMembers();
+        GameManager.pool_Gibs.DeactivateAllMembers();
 
         for (int i = 0; i < GameManager.worldObj.transform.childCount; i++) {
             Destroy(GameManager.worldObj.transform.GetChild(i).gameObject);

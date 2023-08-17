@@ -11,6 +11,8 @@ public class TurretController : MonoBehaviour
     public Transform overrideTarget;
     public Transform bulletStart;
     public float bulletForce = 15f;
+    public int defaultSuccessiveShots = 99;
+    public float defaultSuccessiveShotsCooldown = 3f;
     public float defaultActiveCooldown = 3.0f;
     public float defaultShotCooldown = 1.0f;
     public AudioClip bulletShootSFX;
@@ -18,6 +20,7 @@ public class TurretController : MonoBehaviour
     [Header("For use by other triggers")]
     public bool turretIsDisabled = false;
     private Transform target;
+    private int currentSuccessiveShots = 0;
     private float shotCooldown = 0f;
     private float loseTargetCooldown = 0f;
     private bool isActive = false;
@@ -48,9 +51,10 @@ public class TurretController : MonoBehaviour
         
         // demo victim
         if(overrideTarget != null) {
-            if (target.GetComponent<VictimHealth>().health <= 0) {
-                return;
-            }
+            //if (target.GetComponent<VictimHealth>().health <= 1) {
+            //    shotCooldown = 2f;
+            //    return;
+            //}
         }
         // end demo victim
         
@@ -107,6 +111,13 @@ public class TurretController : MonoBehaviour
         
 
         shotCooldown = defaultShotCooldown;
+        currentSuccessiveShots += 1;
+        if(currentSuccessiveShots > defaultSuccessiveShots) {
+            shotCooldown = defaultSuccessiveShotsCooldown;
+            currentSuccessiveShots = 0;
+            isActive = false;
+            return;
+        }
         GameObject bullet = GameManager.pool_Bullets.Spawn(bulletStart.position);
         bullet.GetComponent<Rigidbody>().velocity = Vector3.zero;
         bullet.GetComponent<Rigidbody>().position = bulletStart.position;

@@ -48,10 +48,11 @@ public class Pool : MonoBehaviour {
 		if (reuseActiveObjects == true) {
 			GameObject obj = pooledObjects[currentReuseIndex];
 
-			if (obj.GetComponent<Rigidbody>() != null) {
-				obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
-			}
-			obj.transform.position = position;
+            //if (obj.GetComponent<Rigidbody>() != null) {
+            //	obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            //}
+            obj.transform.position = position;
+            obj.SetActive(false);
 			obj.SetActive(true);
 
 			currentReuseIndex += 1;
