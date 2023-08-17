@@ -16,6 +16,9 @@ SFX:
 Sonniss 2023 / BluezoneCorp - Detonation - Explosion / Bluezone_BC0277_explosion_urban_004_02
 Sonniss 2017 / Gamemaster Audio -  Explosion Sound Pack / explosion_large_no_tail_03
 
+-Button SFX:
+Sonniss 2020 - Game Audio Bundle\Async Audio - Sci-Fi Blaster \ Blast Laser 4
+
 Gun shots:
 Sonniss \ Assault Rifle TO SHOTGUN - M4 - 03 - Burst 03
 Sonniss \ gun_revolver_pistol_shot_04
