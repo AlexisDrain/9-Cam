@@ -8,6 +8,8 @@ public class LevelValues : MonoBehaviour
     public Transform firstPlayerCheckpoint;
     public string levelName;
     public bool isTurret = false;
+    public bool smoothCamBlends = false;
+
     void Start()
     {
         

@@ -2538,7 +2538,7 @@ Transform:
   - {fileID: 2425939009632998813}
   - {fileID: 3048028531039507731}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6713161957784365621
 Animator:
@@ -2573,7 +2573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2bb3faf16012442be012980f638bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 1.5
+  timeToWait: 1
   onTimeEnd:
     m_PersistentCalls:
       m_Calls:

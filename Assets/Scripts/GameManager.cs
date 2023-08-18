@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Cinemachine;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour
     public static GameObject canvasScreenTransition;
     public static GameObject canvasDeath;
     public static GameObject canvasLevelName;
+
+    public static Transform mainCameras;
 
     public static bool playerIsAlive = true;
     public static bool gameIsPaused = true;
@@ -63,6 +67,7 @@ public class GameManager : MonoBehaviour
         canvasLevelName = GameObject.Find("CanvasLevelName/BigLevelNameText");
         canvasLevelName.GetComponent<Text>().enabled = false;
 
+        mainCameras = GameObject.Find("MainCameras").transform;
 
         worldMask = LayerMask.NameToLayer("World");
         entityMask = LayerMask.NameToLayer("Entity");
@@ -207,6 +212,16 @@ public class GameManager : MonoBehaviour
             TurretCamManager.EnableMiddleCamera();
         } else {
             TurretCamManager.DisableMiddleCamera();
+        }
+        // custom camera blend for Somos
+        if (GameManager.currentLevel.GetComponent<LevelValues>().smoothCamBlends) {
+            foreach (Transform child in mainCameras) {
+                child.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
+            }
+        } else {
+            foreach (Transform child in mainCameras) {
+                child.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
+            }
         }
 
         GameManager.canvasTopRightTutorial.SetActive(false);
