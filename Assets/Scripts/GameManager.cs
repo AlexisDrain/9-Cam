@@ -178,11 +178,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ScreenTransition());
     }
     public IEnumerator ScreenTransition() {
-        print("start screen transition");
         canvasScreenTransition.GetComponent<Animator>().SetTrigger("FadeInThenOut");
         yield return new WaitForSecondsRealtime(0.5f);
         SwitchLevel(currentLevelInt);
-        print("end screen transition");
     }
     public void SwitchLevel(int level) {
         Time.timeScale = 1.0f;
