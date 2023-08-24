@@ -9,6 +9,7 @@ public class EntitySpin : MonoBehaviour
     public Vector2 spinSpeedRange = new Vector2(3f, 15f);
     public bool randomReverse = true;
 
+    public Vector3 rotationAngle = new Vector3(0f, 1f, 0f);
     private Rigidbody myRigidbody;
 
     // Start is called before the first frame update
@@ -16,14 +17,14 @@ public class EntitySpin : MonoBehaviour
     {
 		myRigidbody = GetComponent<Rigidbody>();
 
-        //GameManagerChasm.resetEnemyCollisions.AddListener(ResetEntity);
+        GameManager.playerRevive.AddListener(ResetEntity);
         ResetEntity();
 
     }
 
     public void ResetEntity() {
-        transform.rotation = Quaternion.Euler(0f, 0f, initialRotation);
-        myRigidbody.rotation = Quaternion.Euler(0f, 0f, initialRotation);
+        transform.rotation = Quaternion.Euler(0f, initialRotation, 0f);
+        myRigidbody.rotation = Quaternion.Euler(0f, initialRotation, 0f);
 
         myRigidbody.velocity = Vector3.zero;
         myRigidbody.angularVelocity = Vector3.zero;
@@ -34,8 +35,8 @@ public class EntitySpin : MonoBehaviour
         } else {
             speed = Random.Range(spinSpeedRange.x, spinSpeedRange.y);
         }
-
-        myRigidbody.AddTorque(new Vector3(0f, 0f, speed));
+        print(speed);
+        myRigidbody.AddTorque(speed * rotationAngle);
 
     }
 }

@@ -189,7 +189,7 @@ public class GameManager : MonoBehaviour
         gameHasBeenStartedOnce = true;
 
         GameManager.pool_Bullets.DeactivateAllMembers();
-        //GameManager.pool_LoudAudioSource.DeactivateAllMembers();
+        //GameManager.pool_LoudAudioSource.DeactivateAllMembers(); // this stops sounds from playing through level transitions
         GameManager.pool_Gibs.DeactivateAllMembers();
 
         for (int i = 0; i < GameManager.worldObj.transform.childCount; i++) {
