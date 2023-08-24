@@ -35,7 +35,7 @@ public class EntitySpin : MonoBehaviour
         } else {
             speed = Random.Range(spinSpeedRange.x, spinSpeedRange.y);
         }
-        print(speed);
+
         myRigidbody.AddTorque(speed * rotationAngle);
 
     }

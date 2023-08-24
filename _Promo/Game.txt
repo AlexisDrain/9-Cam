@@ -12,16 +12,22 @@ Doors:
 <a href="https://www.freepik.com/free-vector/realistic-doors-collection-illustration_17806539.htm#query=door%20texture&position=3&from_view=keyword&track=ais">Image by pikisuperstar</a> on Freepik
 
 SFX:
+Walking (bell) SFX:
+Sonnis 2018 \ The Chris Alan - Musical Oddities - Bells, Whistles, Horns, Percussion and More \ BELL TREE UP DOWN ERIE STYLISTIC VARIOUS SPEED LENGTH
+
+-Chainsaw SFX:
+Sonniss 2016 / Game Audio Bundle / SoundHolder - Chainsaw / chainsaw gas small engine gas pressing and sawing high rpm mono
+
 -Explosion SFX:
 Sonniss 2023 / BluezoneCorp - Detonation - Explosion / Bluezone_BC0277_explosion_urban_004_02
 Sonniss 2017 / Gamemaster Audio -  Explosion Sound Pack / explosion_large_no_tail_03
 
 -Button SFX:
-Sonniss 2020 - Game Audio Bundle\Async Audio - Sci-Fi Blaster \ Blast Laser 4
+Sonniss 2020 - Game Audio Bundle\Async Audio - Sci-Fi Blaster / Blast Laser 4
 
 Gun shots:
-Sonniss \ Assault Rifle TO SHOTGUN - M4 - 03 - Burst 03
-Sonniss \ gun_revolver_pistol_shot_04
+Sonniss 2016 \ Fascinated Sound - The Gun Locker SFX Pack \ Assault Rifle - M4 - 03 - Burst 03
+Sonniss 2017 \ gun_revolver_pistol_shot_04
 
 Menu SFX:
 Halfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/
