@@ -11,7 +11,13 @@ public class EventIntroExplodeWall : MonoBehaviour
     public GameObject oldPipe;
     public GameObject newPipe;
 
+    public AudioSource steamAudioSource;
     public AudioClip explosionClip;
+    public AudioClip steamClip;
+    public AudioClip tapTurnClip;
+    public AudioClip debrisClip;
+    public ParticleSystem particles_smoke;
+    public ParticleSystem particles_debris;
 
     private bool hasBeenActivated = false;
 
@@ -28,16 +34,20 @@ public class EventIntroExplodeWall : MonoBehaviour
         }
         hasBeenActivated = true;
 
-        print("Todo: Add pipe turn sfx. smoke sfx. explosion sf. Add smoke particle effect, explosion debree particle effect");
         if (otherCollider.CompareTag("Player")) {
             pipeKey.GetComponent<Animator>().SetTrigger("TurnPipeKey");
+            GameManager.SpawnLoudAudio(tapTurnClip, Vector2.zero);
+            steamAudioSource.clip = steamClip;
+            steamAudioSource.PlayWebGL();
         }
 
         StartCoroutine(DelayExplosion());
     }
 
     public IEnumerator DelayExplosion() {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1.5f);
+        particles_smoke.Play();
+        yield return new WaitForSeconds(4f);
         oldWall.SetActive(false);
         oldPipe.SetActive(false);
         pipeKey.SetActive(false);
@@ -46,5 +56,10 @@ public class EventIntroExplodeWall : MonoBehaviour
         newPipe.SetActive(true);
 
         GameManager.SpawnLoudAudio(explosionClip, Vector2.zero, 0.5f);
+
+        yield return new WaitForSeconds(0.1f);
+        particles_debris.Play();
+
+        GameManager.SpawnLoudAudio(debrisClip, Vector2.zero);
     }
 }

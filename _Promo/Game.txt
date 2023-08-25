@@ -11,7 +11,20 @@ https://www.texturecan.com/details/94/
 Doors:
 <a href="https://www.freepik.com/free-vector/realistic-doors-collection-illustration_17806539.htm#query=door%20texture&position=3&from_view=keyword&track=ais">Image by pikisuperstar</a> on Freepik
 
+Fonts:
+- Roboto-Black - Apache License Version 2.0
+- Tschichold Alt Bold https://www.dafont.com/tschichold.font
+
 SFX:
+Ambiance (music?)
+- Sonniss.com 2023 - Game Audio Bundle\Ivo Vicic - Industrial gas boiler room\29 Industrial Gas  Boiler room_pipes_instalations_room in front_near.wav
+
+steam tap turn:
+Sonniss.com 2020 - Game Audio Bundle\344 Audio - Supernatural Ghosts\Piercing Riser, Harsh, Metallic, Layer, Creepy, Horror 7.wav
+
+Pipe smoke:
+Sonniss 2020 - Game Audio Bundle\SpillAudio - Bar and Coffee Shop\steam_007.wav
+
 Walking (bell) SFX:
 Sonnis 2018 \ The Chris Alan - Musical Oddities - Bells, Whistles, Horns, Percussion and More \ BELL TREE UP DOWN ERIE STYLISTIC VARIOUS SPEED LENGTH
 
@@ -37,7 +50,3 @@ Sonniss\Alexander Kopeikin - Rocks - rock tumble down debris long 06
 
 -Crunchy, chiptune sound effects like Lava:
 BFXR
-
-Fonts:
-- Roboto-Black - Apache License Version 2.0
-- Tschichold Alt Bold https://www.dafont.com/tschichold.font

@@ -16,6 +16,15 @@ public class PlayerController : MonoBehaviour
 
     public GameObject graphicGirl;
     public GameObject shadow;
+
+    [Header("ReadOnly")]
+    public bool _onGround = false;
+
+    [Header("LandSFX")]
+    public AudioSource audioSourceFootsteps;
+    public AudioClip landSFX;
+    public Vector2 landSFXPitch = new Vector2(0.8f, 1.2f);
+
     private Rigidbody myRigidbody;
     private CapsuleCollider myCapsuleCollider;
     private Animator girlAnimator;
@@ -57,6 +66,21 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.playerIsAlive == false) {
             return;
+        }
+        RaycastHit hit;
+        Physics.Linecast(transform.position, transform.position + new Vector3(0f, -2f, 0f), out hit, (1 << GameManager.worldMask) + (1 << GameManager.entityMask));
+        if(hit.collider) {
+            if (_onGround == false) {
+                _onGround = true;
+
+                // sfx
+                float randPitch = Random.Range(landSFXPitch.x, landSFXPitch.y);
+                audioSourceFootsteps.pitch = randPitch;
+                audioSourceFootsteps.clip = landSFX;
+                audioSourceFootsteps.PlayWebGL();
+            }
+        } else {
+            _onGround = false;
         }
 
         // crouch
