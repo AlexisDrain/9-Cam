@@ -40,10 +40,12 @@ public class TurretController : MonoBehaviour
         shotCooldown = defaultActiveCooldown;
         turretIsDisabled = false;
         isActive = false;
+        GetComponent<Renderer>().enabled = true;
     }
     public void BlackifyTurret() {
         turretIsDisabled = true;
         TurretCamManager.BlackifyMiddleCamera();
+        GetComponent<Renderer>().enabled = false; // visual so that the turret doesn't appear on the black camera
     }
 
     // Update is called once per frame

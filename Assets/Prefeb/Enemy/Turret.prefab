@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 4596189400678237615}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &8367179295475227867
 MonoBehaviour:
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2163
+  m_VersionIndex: 2263
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -874,7 +874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 1ca8b09103e6c154b8b43e5af1ba2fde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -939,12 +939,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetIsPlayer: 1
+  canLookUp: 1
   overrideTarget: {fileID: 0}
   bulletStart: {fileID: 4596189400678237615}
   bulletForce: 40
+  defaultSuccessiveShots: 99
+  defaultSuccessiveShotsCooldown: 3
   defaultActiveCooldown: 1
   defaultShotCooldown: 0.2
   bulletShootSFX: {fileID: 8300000, guid: d362abad553a8ab4c84e3ceca658a4be, type: 3}
+  turretIsDisabled: 0
 --- !u!82 &6089190368631862510
 AudioSource:
   m_ObjectHideFlags: 0

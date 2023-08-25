@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public static GameObject canvasLevelName;
 
     public static Transform mainCameras;
+    public static Transform mainCameraMiddle;
 
     public static bool playerIsAlive = true;
     public static bool gameIsPaused = true;
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
         canvasLevelName.GetComponent<Text>().enabled = false;
 
         mainCameras = GameObject.Find("MainCameras").transform;
+        mainCameraMiddle = GameObject.Find("MainCameras/5-Middle-MainCam").transform;
 
         worldMask = LayerMask.NameToLayer("World");
         entityMask = LayerMask.NameToLayer("Entity");

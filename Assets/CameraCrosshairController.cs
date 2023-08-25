@@ -10,7 +10,12 @@ public class CameraCrosshairController : MonoBehaviour
 
     public Color activeColor;
     public Color disabledColor = Color.black;
-    // Start is called before the first frame update
+
+
+    private void Start() {
+
+    }
+
     void OnEnable()
     {
         SetColorToBlue(true);
@@ -22,8 +27,11 @@ public class CameraCrosshairController : MonoBehaviour
         activeState = state;
         if(state == true) {
             crosshairBG.color = activeColor;
+
         } else {
             crosshairBG.color = disabledColor;
+
+            //GameManager.mainCameraMiddle.GetComponent<Camera>().cullingMask = 0;
         }
     }
 }
