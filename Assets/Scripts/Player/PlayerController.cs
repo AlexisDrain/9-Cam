@@ -53,12 +53,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Crouch")) {
             isCrouching = true;
             girlAnimator.SetTrigger("Crouch");
-            print("sit");
         }
         if (Input.GetButtonUp("Crouch")) {
             isCrouching = false;
             girlAnimator.SetTrigger("Stand");
-            print("stand");
         }
     }
     // Update is called once per frame
