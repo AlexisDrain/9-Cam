@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (GameManager.playerIsAlive == false) {
+            myRigidbody.velocity = new Vector3(0f, 0f, 0f);
             return;
         }
         RaycastHit hit;

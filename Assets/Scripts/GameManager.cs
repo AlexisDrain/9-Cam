@@ -209,7 +209,11 @@ public class GameManager : MonoBehaviour
             canvasLevelName.GetComponent<ShowLevelName>().ShowLevel(GameManager.currentLevel.GetComponent<LevelValues>().levelName);
         }
         if (GameManager.currentLevel.GetComponent<LevelValues>().isTurret) {
-            TurretCamManager.EnableMiddleCamera();
+            if (GameManager.currentLevel.GetComponent<LevelValues>().isSomos) {
+                TurretCamManager.EnableMiddleCamera(true);
+            } else {
+                TurretCamManager.EnableMiddleCamera();
+            }
         } else {
             TurretCamManager.DisableMiddleCamera();
         }
@@ -223,6 +227,8 @@ public class GameManager : MonoBehaviour
                 child.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
             }
         }
+        
+        
 
         GameManager.canvasTopRightTutorial.SetActive(false);
         GameManager.canvasCrouchTutorial.SetActive(false);

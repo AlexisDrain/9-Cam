@@ -380,6 +380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be48fd5c2a6bdea478ed15eaef55e5c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notes: 'Line 1 is what interactes with world
+
+    Line 2 is visual only'
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -395,33 +398,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6713161957784365621}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: On
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4572280208306941715}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 7980037286888473592}
+        m_TargetAssemblyTypeName: WorldButtonController, Assembly-CSharp
+        m_MethodName: ActivateButtonVisual
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: On
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   triggerWithPlayer: 1
   resetWithPlayer: 1
   resetOnEnable: 1
+  canBeReTriggered: 0
 --- !u!82 &4572280208306941715
 AudioSource:
   m_ObjectHideFlags: 0
@@ -434,7 +426,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2133023030816354152, guid: 74c75a232f652ec48bb81dc4a7654b47, type: 2}
   m_audioClip: {fileID: 8300000, guid: 283b9fa021438bf44806ffd82f49da1c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -442,8 +434,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.5
+  MaxDistance: 2.5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -478,7 +470,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2515,7 +2507,7 @@ GameObject:
   - component: {fileID: 2973221584898795144}
   - component: {fileID: 6713161957784365621}
   - component: {fileID: 1324390253735485939}
-  - component: {fileID: 3520417815049814084}
+  - component: {fileID: 7980037286888473592}
   m_Layer: 7
   m_Name: Button_Wall
   m_TagString: Untagged
@@ -2538,7 +2530,7 @@ Transform:
   - {fileID: 2425939009632998813}
   - {fileID: 3048028531039507731}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6713161957784365621
 Animator:
@@ -2573,6 +2565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2bb3faf16012442be012980f638bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notes: Change this to activate stuff in the world
   timeToWait: 1
   onTimeEnd:
     m_PersistentCalls:
@@ -2592,7 +2585,7 @@ MonoBehaviour:
   waitForSecondsRealtime: 0
   resetWithPlayer: 1
   startOnEnable: 0
---- !u!114 &3520417815049814084
+--- !u!114 &7980037286888473592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2601,25 +2594,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8542176998712810832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc2bb3faf16012442be012980f638bf7, type: 3}
+  m_Script: {fileID: 11500000, guid: b341fc79f9d3e464db69c6b4afbcf4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 0.1
-  onTimeEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6713161957784365621}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Off
-          m_BoolArgument: 0
-        m_CallState: 2
-  waitForSecondsRealtime: 0
-  resetWithPlayer: 1
-  startOnEnable: 1
+  deactivateAudioClip: {fileID: 8300000, guid: 7df7d4fe07da34247adcc3edfa40c7ba, type: 3}
+  activateAudioClip: {fileID: 8300000, guid: 283b9fa021438bf44806ffd82f49da1c, type: 3}
+  audioSource: {fileID: 4572280208306941715}
+  myAnimator: {fileID: 6713161957784365621}
+  isActive: 0

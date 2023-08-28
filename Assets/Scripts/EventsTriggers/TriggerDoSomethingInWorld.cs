@@ -5,10 +5,13 @@ using UnityEngine.Events;
 
 public class TriggerDoSomethingInWorld : MonoBehaviour
 {
+    [TextArea(2, 30)]
+    public string notes;
     public UnityEvent onTriggerEnter;
     public bool triggerWithPlayer = true;
     public bool resetWithPlayer = true;
     public bool resetOnEnable = true;
+    public bool canBeReTriggered = false;
 
     private bool hasBeenTriggered = false;
     // Start is called before the first frame update
@@ -27,7 +30,7 @@ public class TriggerDoSomethingInWorld : MonoBehaviour
         hasBeenTriggered = false;
     }
     void OnTriggerEnter(Collider otherCollider) {
-        if (hasBeenTriggered) {
+        if (hasBeenTriggered && canBeReTriggered == false) {
             return;
         }
         if(triggerWithPlayer) {
@@ -42,7 +45,7 @@ public class TriggerDoSomethingInWorld : MonoBehaviour
         }
     }
     private void OnCollisionEnter(Collision collision) {
-        if (hasBeenTriggered) {
+        if (hasBeenTriggered && canBeReTriggered == false) {
             return;
         }
         if (triggerWithPlayer) {

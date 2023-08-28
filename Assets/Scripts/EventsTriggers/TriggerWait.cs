@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class TriggerWait : MonoBehaviour {
 
+    [TextArea(2, 30)]
+    public string notes;
     public float timeToWait = 3f;
     public UnityEvent onTimeEnd;
     public bool waitForSecondsRealtime = false;

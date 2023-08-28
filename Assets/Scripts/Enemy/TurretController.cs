@@ -37,6 +37,9 @@ public class TurretController : MonoBehaviour
         GameManager.playerRevive.AddListener(ResetEntity);
     }
     public void ResetEntity() {
+        if (isActive) {
+            TurretCamManager.EnableMiddleCamera();
+        }
         shotCooldown = defaultActiveCooldown;
         turretIsDisabled = false;
         isActive = false;
