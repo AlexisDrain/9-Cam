@@ -15,6 +15,7 @@ public class ShowLevelName : MonoBehaviour
     // Update is called once per frame
     public void ShowLevel(string levelName)
     {
+        GetComponent<AudioSource>().PlayWebGL();
         GetComponent<Text>().text = levelName;
         GetComponent<Text>().enabled = true;
 

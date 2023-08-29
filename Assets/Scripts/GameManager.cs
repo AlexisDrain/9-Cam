@@ -9,6 +9,20 @@ using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
+
+    public enum CameraTransform {
+        None,
+        BottomLeft_MainCam,
+        Bottom_MainCam,
+        BottomRight_MainCam,
+        MiddleLeft_MainCam,
+        Middle_MainCam,
+        MiddleRight_MainCam,
+        TopLeft_MainCam,
+        Top_MainCam,
+        TopRight_MainCam
+    }
+
     public static Transform playerCheckpoint;
     public static Transform checkpointCameraBundle;
     public static GameObject currentLevel;
@@ -31,7 +45,15 @@ public class GameManager : MonoBehaviour
     public static GameObject canvasLevelName;
 
     public static Transform mainCameras;
+    public static Transform mainCameraBottomLeft;
+    public static Transform mainCameraBottom;
+    public static Transform mainCameraBottomRight;
+    public static Transform mainCameraMiddleLeft;
     public static Transform mainCameraMiddle;
+    public static Transform mainCameraMiddleRight;
+    public static Transform mainCameraTopLeft;
+    public static Transform mainCameraTop;
+    public static Transform mainCameraTopRight;
 
     public static bool playerIsAlive = true;
     public static bool gameIsPaused = true;
@@ -69,7 +91,15 @@ public class GameManager : MonoBehaviour
         canvasLevelName.GetComponent<Text>().enabled = false;
 
         mainCameras = GameObject.Find("MainCameras").transform;
+        mainCameraBottomLeft = GameObject.Find("MainCameras/1-BottomLeft-MainCam").transform;
+        mainCameraBottom = GameObject.Find("MainCameras/2-Bottom-MainCam").transform;
+        mainCameraBottomRight = GameObject.Find("MainCameras/3-BottomRight-MainCam").transform;
+        mainCameraMiddleLeft = GameObject.Find("MainCameras/4-MiddleLeft-MainCam").transform;
         mainCameraMiddle = GameObject.Find("MainCameras/5-Middle-MainCam").transform;
+        mainCameraMiddleRight = GameObject.Find("MainCameras/6-MiddleRight-MainCam").transform;
+        mainCameraTopLeft = GameObject.Find("MainCameras/7-TopLeft-MainCam").transform;
+        mainCameraTop = GameObject.Find("MainCameras/8-Top-MainCam").transform;
+        mainCameraTopRight = GameObject.Find("MainCameras/9-TopRight-MainCam").transform;
 
         worldMask = LayerMask.NameToLayer("World");
         entityMask = LayerMask.NameToLayer("Entity");

@@ -33,9 +33,9 @@ TagManager:
   - CamTopRight
   - CamTop
   - CamTopLeft
-  - CamRight
+  - CamMiddleRight
   - CamMiddle
-  - CamLeft
+  - CamMiddleLeft
   - CamBottomRight
   - CamBottom
   - CamBottomLeft
