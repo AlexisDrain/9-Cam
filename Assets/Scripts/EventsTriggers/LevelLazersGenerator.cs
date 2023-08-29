@@ -5,7 +5,9 @@ using UnityEngine;
 public class LevelLazersGenerator : MonoBehaviour
 {
     public List<GameObject> lazerBundles = new List<GameObject>();
+    public List<Sprite> countdownSprites = new List<Sprite>();
 
+    public SpriteRenderer doorLED;
     public Animator doorAnimator;
     public Transform laserOriginFront;
     public Transform laserOriginBack;
@@ -36,6 +38,7 @@ public class LevelLazersGenerator : MonoBehaviour
 
         StopCoroutine("LazerTimeline");
         currentLazer = 0;
+        doorLED.sprite = countdownSprites[currentLazer];
         StartCoroutine("LazerTimeline");
     }
 
@@ -43,28 +46,35 @@ public class LevelLazersGenerator : MonoBehaviour
         yield return new WaitForSeconds(2f);
         GameObject lazerCurrent = GameObject.Instantiate(lazerBundles[currentLazer], laserOriginFront.position, Quaternion.identity, laserOriginFront); // front
         currentLazer += 1;
+        doorLED.sprite = countdownSprites[currentLazer];
         yield return new WaitForSeconds(4f);
         Destroy(lazerCurrent);
         lazerCurrent = GameObject.Instantiate(lazerBundles[currentLazer], laserOriginFront.position, Quaternion.identity, laserOriginFront); // front
         currentLazer += 1;
+        doorLED.sprite = countdownSprites[currentLazer];
         yield return new WaitForSeconds(4f);
         Destroy(lazerCurrent);
         lazerCurrent = GameObject.Instantiate(lazerBundles[currentLazer], laserOriginFront.position, Quaternion.identity, laserOriginFront); // front
         currentLazer += 1;
+        doorLED.sprite = countdownSprites[currentLazer];
         yield return new WaitForSeconds(4f);
         Destroy(lazerCurrent);
         lazerCurrent = GameObject.Instantiate(lazerBundles[currentLazer], laserOriginFront.position, Quaternion.identity, laserOriginFront); // front
         currentLazer += 1;
+        doorLED.sprite = countdownSprites[currentLazer];
         yield return new WaitForSeconds(4f);
         Destroy(lazerCurrent);
         lazerCurrent = GameObject.Instantiate(lazerBundles[currentLazer], laserOriginFront.position, Quaternion.identity, laserOriginFront); // front
         currentLazer += 1;
+        doorLED.sprite = countdownSprites[currentLazer];
         yield return new WaitForSeconds(4f);
         Destroy(lazerCurrent);
         lazerCurrent = GameObject.Instantiate(lazerBundles[currentLazer], laserOriginFront.position, Quaternion.identity, laserOriginFront); // front
         currentLazer += 1;
+        doorLED.sprite = countdownSprites[currentLazer];
         yield return new WaitForSeconds(4f);
         Destroy(lazerCurrent);
+        doorLED.sprite = countdownSprites[currentLazer+1];
 
         doorOpen = true;
         doorAnimator.SetTrigger("OpenDoorNHandle");

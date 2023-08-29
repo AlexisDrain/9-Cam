@@ -6,6 +6,7 @@ public class LevelValues : MonoBehaviour
 {
     public Transform firstCameraBundle;
     public Transform firstPlayerCheckpoint;
+    [TextArea(2,2)]
     public string levelName;
     public bool isTurret = false;
     [Header("Somos only")]
