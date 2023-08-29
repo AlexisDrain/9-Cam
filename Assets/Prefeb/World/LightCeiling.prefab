@@ -28,6 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464546714829195497}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 9.75, y: -2.7537413, z: -5.416458}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,7 +36,6 @@ Transform:
   m_Children:
   - {fileID: 7553540845904755422}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &8660676345805543109
 MonoBehaviour:
@@ -491,17 +491,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 846
   m_IsSelectable: 1
-  m_SelectedFaces: 09000000
-  m_SelectedEdges:
-  - a: 36
-    b: 37
-  - a: 38
-    b: 36
-  - a: 37
-    b: 39
-  - a: 39
-    b: 38
-  m_SelectedVertices: 24000000250000002600000027000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &1185793971293073533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +521,7 @@ MonoBehaviour:
     RefIds:
     - rid: 6520960053356003357
       type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
+      data: 
 --- !u!23 &8526393892440452807
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -597,7 +590,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 6.5000024, y: 1.0000002, z: 1}
   m_Center: {x: -2.7500012, y: 0, z: 0}
@@ -625,13 +618,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9122166169845790848}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.45451945, y: 0.12278782, z: 0.6963643, w: 0.5416753}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2742393027447914233}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!108 &1890916840178159980
 Light:
