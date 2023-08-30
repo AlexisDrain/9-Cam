@@ -114,7 +114,6 @@ public class GameManager : MonoBehaviour
         //NewGame();
     }
     public static void KillPlayer() {
-        print("player must die");
         playerIsAlive = false;
         GameManager.canvasDeath.SetActive(true);
         GameManager.player.GetComponent<PlayerController>().graphicGirl.SetActive(false);
@@ -124,7 +123,6 @@ public class GameManager : MonoBehaviour
         gibs.transform.rotation = GameManager.player.transform.rotation;
     }
     public static void RevivePlayer() {
-        print("Revive Player");
         playerIsAlive = true;
         GameManager.canvasDeath.SetActive(false);
         GameManager.player.GetComponent<PlayerController>().graphicGirl.SetActive(true);
@@ -196,7 +194,7 @@ public class GameManager : MonoBehaviour
             // new game
             if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                 && (Input.GetKeyDown(KeyCode.F3) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))) {
-                NewGame();
+                //NewGame();
             }
             // remove tutorial message
             if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
@@ -205,8 +203,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    // level changes starts with this function: SetNewLevel. It will call the other functions.
     public void SetNewLevel(int level) {
         currentLevelInt = level;
+        print(currentLevelInt);
         StartCoroutine(ScreenTransition());
     }
     public IEnumerator ScreenTransition() {

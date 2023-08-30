@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c52b653b91f424438fa4dd188d8eace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followPlayerThroughWalls: 1
+  followPlayerThroughWalls: 0
 --- !u!1 &4880243408655194637
 GameObject:
   m_ObjectHideFlags: 0
