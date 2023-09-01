@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntitySpin : MonoBehaviour
 {
-    public float initialRotation = 0f;
+    public Vector3 initialRotation = new Vector3(0f, 0f, 0f);
 
     public Vector2 spinSpeedRange = new Vector2(3f, 15f);
     public bool randomReverse = true;
@@ -23,8 +23,8 @@ public class EntitySpin : MonoBehaviour
     }
 
     public void ResetEntity() {
-        transform.rotation = Quaternion.Euler(0f, initialRotation, 0f);
-        myRigidbody.rotation = Quaternion.Euler(0f, initialRotation, 0f);
+        transform.rotation = Quaternion.Euler(initialRotation);
+        myRigidbody.rotation = Quaternion.Euler(initialRotation);
 
         myRigidbody.velocity = Vector3.zero;
         myRigidbody.angularVelocity = Vector3.zero;
