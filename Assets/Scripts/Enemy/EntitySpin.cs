@@ -21,13 +21,29 @@ public class EntitySpin : MonoBehaviour
         ResetEntity();
 
     }
+    // FixedUpdate: KINEMATIC ONLY
+    public void FixedUpdate() {
+        if (myRigidbody.isKinematic) {
+            float speed = 0f;
+            if (randomReverse) {
+                speed = (Random.Range(0, 2) * 2 - 1) * Random.Range(spinSpeedRange.x, spinSpeedRange.y);
+            } else {
+                speed = Random.Range(spinSpeedRange.x, spinSpeedRange.y);
+            }
 
+            Quaternion deltaRotation = Quaternion.Euler(rotationAngle * speed * Time.fixedDeltaTime);
+            print(deltaRotation);
+            myRigidbody.MoveRotation(myRigidbody.rotation * deltaRotation);
+        }
+    }
     public void ResetEntity() {
         transform.rotation = Quaternion.Euler(initialRotation);
         myRigidbody.rotation = Quaternion.Euler(initialRotation);
 
-        myRigidbody.velocity = Vector3.zero;
-        myRigidbody.angularVelocity = Vector3.zero;
+        if (myRigidbody.isKinematic == false) {
+            myRigidbody.velocity = Vector3.zero;
+            myRigidbody.angularVelocity = Vector3.zero;
+        }
 
         float speed = 0f;
         if (randomReverse) {
@@ -35,8 +51,9 @@ public class EntitySpin : MonoBehaviour
         } else {
             speed = Random.Range(spinSpeedRange.x, spinSpeedRange.y);
         }
-
-        myRigidbody.AddTorque(speed * rotationAngle);
+        if (myRigidbody.isKinematic == false) {
+            myRigidbody.AddTorque(speed * rotationAngle);
+        }
 
     }
 }
