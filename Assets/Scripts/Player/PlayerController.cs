@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip landSFX;
     public Vector2 landSFXPitch = new Vector2(0.8f, 1.2f);
 
+    public AudioClip deathByFall;
+
     private Rigidbody myRigidbody;
     private CapsuleCollider myCapsuleCollider;
     private Animator girlAnimator;
@@ -117,7 +119,7 @@ public class PlayerController : MonoBehaviour
         myRigidbody.velocity = new Vector3(velocityClamped.x, myRigidbody.velocity.y, velocityClamped.z);
         
         if(transform.position.y < -15f) {
-            print("Player is falling");
+            GameManager.SpawnLoudAudio(deathByFall, Vector2.one, 0.4f);
             GameManager.KillPlayer();
         }
     }
