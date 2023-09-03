@@ -29,6 +29,9 @@ Sonniss.com 2015 - Game Audio Bundle TheLibrarybyEmptySea - Gateway Part1\patio_
 box push SFX:
 Sonniss.com 2023 - Game Audio Bundle \ Justsoundeffects - Metal Movements \ DOORHdwr_Big Metal Gate Pushbar Squeak 02_JSE_MM_Stereo.wav
 
+Glass break SFX:
+Sonniss.com 2015 - Game Audio Bundle\Soundopolis - Glass Smash Full\Glass_Break_ChampagneBottle_D50_Fienup_003.wav
+
 steam tap turn:
 https://freesound.org/people/FreqMan/sounds/31380/
 Sonniss.com 2020 - Game Audio Bundle\344 Audio - Supernatural Ghosts\Piercing Riser, Harsh, Metallic, Layer, Creepy, Horror 7.wav
