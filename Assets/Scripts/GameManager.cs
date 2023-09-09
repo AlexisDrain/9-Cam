@@ -206,7 +206,6 @@ public class GameManager : MonoBehaviour
     // level changes starts with this function: SetNewLevel. It will call the other functions.
     public void SetNewLevel(int level) {
         currentLevelInt = level;
-        print(currentLevelInt);
         StartCoroutine(ScreenTransition());
     }
     public IEnumerator ScreenTransition() {

@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed = 7f;
     public float maxVelocity = 7f;
 
-    private bool isCrouching = false;
     public float standingHeight = 4f;
     public float crouchingHeight = 2f;
 
@@ -18,7 +17,10 @@ public class PlayerController : MonoBehaviour
     public GameObject shadow;
 
     [Header("ReadOnly")]
+    public bool _isCrouching = false;
     public bool _onGround = false;
+    public int _isRotating = 0;
+    private float canJumpAgain = 0f;
 
     [Header("LandSFX")]
     public AudioSource audioSourceFootsteps;
@@ -29,21 +31,21 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody myRigidbody;
     private CapsuleCollider myCapsuleCollider;
-    private Animator girlAnimator;
+    //private Animator girlAnimator;
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
         myCapsuleCollider = GetComponent<CapsuleCollider>();
-        girlAnimator = graphicGirl.GetComponent<Animator>();
+        //girlAnimator = graphicGirl.GetComponent<Animator>();
     }
     private void Update() {
         if (GameManager.playerIsAlive == false) {
             return;
         }
 
-        // very buggy. can make you double jump sometimes. use a line cast
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(myRigidbody.velocity.y) < 0.1f) {
+        if (Input.GetButton("Jump") && _onGround == true && canJumpAgain <= 0f) {
+            canJumpAgain = 0.5f;
             myRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         }
 
@@ -53,23 +55,26 @@ public class PlayerController : MonoBehaviour
 
         // crouch
         if (Input.GetButtonDown("Crouch")) {
-            isCrouching = true;
-            girlAnimator.SetTrigger("Crouch");
+            _isCrouching = true;
+            //girlAnimator.SetTrigger("Crouch");
         }
         if (Input.GetButtonUp("Crouch")) {
-            isCrouching = false;
-            girlAnimator.SetTrigger("Stand");
+            _isCrouching = false;
+            //girlAnimator.SetTrigger("Stand");
         }
     }
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(canJumpAgain > 0f) {
+            canJumpAgain -= Time.deltaTime;
+        }
         if (GameManager.playerIsAlive == false) {
             myRigidbody.velocity = new Vector3(0f, 0f, 0f);
             return;
         }
         RaycastHit hit;
-        Physics.Linecast(transform.position, transform.position + new Vector3(0f, -2f, 0f), out hit, (1 << GameManager.worldMask) + (1 << GameManager.entityMask));
+        Physics.Linecast(transform.position, transform.position + new Vector3(0f, -1.5f, 0f), out hit, (1 << GameManager.worldMask) + (1 << GameManager.entityMask));
         if(hit.collider) {
             if (_onGround == false) {
                 _onGround = true;
@@ -85,7 +90,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // crouch
-        if (isCrouching) {
+        if (_isCrouching) {
             if (myCapsuleCollider.height > crouchingHeight + 0.1f) {
                 myCapsuleCollider.height = Mathf.Lerp(myCapsuleCollider.height, crouchingHeight, 0.1f);
             }
@@ -100,19 +105,14 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         if (h != 0) {
             transform.eulerAngles += new Vector3(0, h * roationSpeed, 0);
-            girlAnimator.SetBool("IsWalking", true);
+            _isRotating = (int)h;
         } else {
-            girlAnimator.SetBool("IsWalking", false);
+            _isRotating = 0;
         }
         if (v != 0) {
             myRigidbody.AddForce(v * transform.forward * forwardSpeed, ForceMode.Impulse);
-
-            girlAnimator.SetBool("IsWalking", true);
-            //myRigidbody.velocity = v * transform.forward * forwardSpeed;
-            //myRigidbody.AddForce(v * transform.forward * forwardSpeed);
         } else {
             myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
-            girlAnimator.SetBool("IsWalking", false);
         }
         // max speed
         Vector3 velocityClamped = Vector3.ClampMagnitude(myRigidbody.velocity, maxVelocity);

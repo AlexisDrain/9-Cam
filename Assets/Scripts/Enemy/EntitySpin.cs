@@ -32,7 +32,6 @@ public class EntitySpin : MonoBehaviour
             }
 
             Quaternion deltaRotation = Quaternion.Euler(rotationAngle * speed * Time.fixedDeltaTime);
-            print(deltaRotation);
             myRigidbody.MoveRotation(myRigidbody.rotation * deltaRotation);
         }
     }
