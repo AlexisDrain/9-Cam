@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     private static Pool pool_LoudAudioSource;
     public static Pool pool_Bullets;
     public static Pool pool_Gibs;
+
     public static GameObject player;
     public static GameObject worldObj;
     public static GameObject canvasMenu;
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
         pool_LoudAudioSource = transform.Find("Pool_LoudAudioSource").GetComponent<Pool>();
         pool_Bullets = transform.Find("Pool_Bullets").GetComponent<Pool>();
         pool_Gibs = transform.Find("Pool_Gibs").GetComponent<Pool>();
+
         player = GameObject.Find("Player");
         worldObj = GameObject.Find("World");
         canvasMenu = GameObject.Find("CanvasMenu");
@@ -126,6 +128,7 @@ public class GameManager : MonoBehaviour
         playerIsAlive = true;
         GameManager.canvasDeath.SetActive(false);
         GameManager.player.GetComponent<PlayerController>().graphicGirl.SetActive(true);
+        GameManager.player.GetComponent<PlayerController>().graphicGirl.GetComponent<Animator>().Rebind();
         player.GetComponent<PlayerEnemyCollision>().health = 3;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         player.GetComponent<Rigidbody>().rotation = playerCheckpoint.rotation;

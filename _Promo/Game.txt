@@ -1,4 +1,15 @@
 
+[Short Description]
+A 3D puzzle platformer. A gloomy prison tries to contain you...
+
+[Long Description]
+A gloomy prison tries to contain you...
+
+Heavily inspired by the Halfquake Trilogy on Steam.
+
+---------------------------
+[Credits]
+
 Textures:
 https://opengameart.org/content/2-seamless-lava-tiles
 https://opengameart.org/content/wall-grass-rock-stone-wood-and-dirt-480
@@ -56,7 +67,7 @@ Gun shots:
 Sonniss 2016 \ Fascinated Sound - The Gun Locker SFX Pack \ Assault Rifle - M4 - 03 - Burst 03
 Sonniss 2017 \ gun_revolver_pistol_shot_04
 
-Menu SFX:
+Menu SFX. Level transition SFX:
 Halfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/
 
 -Rock fall sound:
