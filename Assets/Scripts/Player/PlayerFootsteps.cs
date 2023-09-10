@@ -29,7 +29,7 @@ public class PlayerFootsteps : MonoBehaviour
         // rotation footsteps
         if(playerController._isRotating != 0) {
             rotation_TimeToPlayFootstepCurrent -= Time.deltaTime;
-            if(rotation_TimeToPlayFootstepCurrent <= 0f) {
+            if(rotation_TimeToPlayFootstepCurrent <= 0f && playerController._onGround) {
                 rotation_TimeToPlayFootstepCurrent = rotation_TimeToPlayFootstepDefault;
                 PlayFootstep();
             }

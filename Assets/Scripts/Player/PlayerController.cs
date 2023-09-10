@@ -22,10 +22,12 @@ public class PlayerController : MonoBehaviour
     public int _isRotating = 0;
     private float canJumpAgain = 0f;
 
-    [Header("LandSFX")]
+    [Header("SFX")]
     public AudioSource audioSourceFootsteps;
     public AudioClip landSFX;
     public Vector2 landSFXPitch = new Vector2(0.8f, 1.2f);
+    public AudioClip jumpSFX;
+    public Vector2 jumpSFXPitch = new Vector2(0.8f, 1.2f);
 
     public AudioClip deathByFall;
 
@@ -47,6 +49,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Jump") && _onGround == true && canJumpAgain <= 0f) {
             canJumpAgain = 0.5f;
             myRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+
+            // sfx
+            float randPitch = Random.Range(jumpSFXPitch.x, jumpSFXPitch.y);
+            audioSourceFootsteps.pitch = randPitch;
+            audioSourceFootsteps.clip = jumpSFX;
+            audioSourceFootsteps.PlayWebGL();
         }
 
         if (Input.GetButtonUp("Jump") && myRigidbody.velocity.y > 0.1f) {
