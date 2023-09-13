@@ -1,6 +1,6 @@
 
 [Short Description]
-A 3D puzzle platformer. A gloomy prison tries to contain you...
+3D puzzle platformer. A gloomy prison tries to contain you...
 
 [Long Description]
 A gloomy prison tries to contain you...
@@ -30,7 +30,7 @@ SFX:
 Ambiance (music?)
 - Sonniss.com 2023 - Game Audio Bundle\Ivo Vicic - Industrial gas boiler room\29 Industrial Gas  Boiler room_pipes_instalations_room in front_near.wav
 
-Level transition Stinger
+Level transition Stinger [Unused. Replaced with Halfquake menu sfx]
 Sonniss 2016- Game Audio Bundle\Soundiron - Sick 6\sick6_stinger_elder-gods_04.wav
 
 Door open:
