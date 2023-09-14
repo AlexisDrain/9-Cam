@@ -52,7 +52,8 @@ public class EntityMover : MonoBehaviour
         }
         if (goTo2 == false && Vector3.Distance(transform.position, pos1) >= 0.2f) {
             transform.position = Vector3.MoveTowards(transform.position, pos1, Time.deltaTime * moveSpeedToOriginalPos);
-        } else {
+        } else if (goTo2 == false) {
+            restartDelayCurrent = restartDelayDefault;
             goTo2 = true;
         }
     }

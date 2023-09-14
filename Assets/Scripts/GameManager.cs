@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Cinemachine;
-using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {

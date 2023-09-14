@@ -10,8 +10,8 @@ public class PlayerFootsteps : MonoBehaviour
     public float rotation_TimeToPlayFootstepDefault = 1f;
     public AudioSource audioSourceFootsteps;
 
-    private new Vector3 oldFootprintLocation;
-    private new Vector3 currentFootprintLocation;
+    private Vector3 oldFootprintLocation;
+    private Vector3 currentFootprintLocation;
 
     private float rotation_TimeToPlayFootstepCurrent = 1f;
 
