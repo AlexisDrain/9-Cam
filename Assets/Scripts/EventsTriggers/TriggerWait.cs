@@ -13,21 +13,22 @@ public class TriggerWait : MonoBehaviour {
     public bool resetWithPlayer = true;
     public bool startOnEnable = true;
     public bool startOnStart = false;
+    public bool restartTimerOnReset = true;
 
     void Start() {
         if (startOnStart) {
-            StartCoroutine(Countdown());
+            StartCoroutine("Countdown");
         }
         if (resetWithPlayer) {
             GameManager.playerRevive.AddListener(ResetTrigger);
         }
     }
     public void StartCoroutine() {
-        StartCoroutine(Countdown());
+        StartCoroutine("Countdown");
     }
     private void OnEnable() {
         if (startOnEnable && gameObject.activeSelf) {
-            StartCoroutine(Countdown());
+            StartCoroutine("Countdown");
         }
     }
 
@@ -41,8 +42,13 @@ public class TriggerWait : MonoBehaviour {
     }
 
     void ResetTrigger() {
+
+        if (restartTimerOnReset) {
+            StopCoroutine("Countdown");
+        }
+
         if(startOnEnable && gameObject.activeSelf) {
-            StartCoroutine(Countdown());
+            StartCoroutine("Countdown");
         }
     }
 }
