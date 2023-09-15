@@ -38,10 +38,12 @@ public class GameManager : MonoBehaviour
     public static GameObject canvasTopRightTutorial;
     public static GameObject canvasCrouchTutorial;
     public static GameObject canvasJumpTutorial;
+    
     //public static GameObject canvasCrosshair;
     public static TurretCamManager turretCamManager;
     public static GameObject canvasScreenTransition;
     public static GameObject canvasDeath;
+    public static GameObject canvasStory;
     public static GameObject canvasLevelName;
 
     public static Transform mainCameras;
@@ -88,6 +90,8 @@ public class GameManager : MonoBehaviour
         canvasScreenTransition = GameObject.Find("CanvasScreenTransition");
         canvasDeath = GameObject.Find("CanvasDeath");
         canvasDeath.SetActive(false);
+        canvasStory = GameObject.Find("CanvasStory");
+        canvasStory.SetActive(false);
         canvasLevelName = GameObject.Find("CanvasLevelName/BigLevelNameText");
         canvasLevelName.GetComponent<Text>().enabled = false;
 
@@ -258,8 +262,13 @@ public class GameManager : MonoBehaviour
                 child.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
             }
         }
-        
-        
+
+        if (GameManager.currentLevel.GetComponent<LevelValues>().story1 == true) {
+            GameManager.canvasStory.SetActive(true);
+            GameManager.canvasStory.transform.Find("Background/FullScreenText").GetComponent<DialogueType>().StartTypewriter();
+        } else {
+            GameManager.canvasStory.SetActive(false);
+        }
 
         GameManager.canvasTopRightTutorial.SetActive(false);
         GameManager.canvasCrouchTutorial.SetActive(false);
