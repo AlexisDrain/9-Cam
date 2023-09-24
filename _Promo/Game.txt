@@ -28,14 +28,21 @@ Fonts:
 
 SFX:
 Ambiance (music?)
-- Sonniss.com 2023 - Game Audio Bundle\Ivo Vicic - Industrial gas boiler room\29 Industrial Gas  Boiler room_pipes_instalations_room in front_near.wav
+Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1693 - Wobbling Waves- Endless Falling Loop.wav
+Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1672 - Tonal Elevator - Endless Rising Loop.wav
+Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1651 - Intergalactic Tension - Endless Falling Loop.wav
+Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1621 - Dissonant Surges - Endless Falling Loop.wav
+Sonniss GDC 2023 - Game Audio Bundle \ Ivo Vicic - Industrial gas boiler room\29 Industrial Gas  Boiler room_pipes_instalations_room in front_near.wa
 
 Level transition Stinger [Unused. Replaced with Halfquake menu sfx]
 Sonniss 2016- Game Audio Bundle\Soundiron - Sick 6\sick6_stinger_elder-gods_04.wav
 
 Door open:
-Sonniss.com 2016 - Game Audio Bundle\3maze -  Doors, Locks and Drawers\door_open_004.wav
-Sonniss.com 2015 - Game Audio Bundle TheLibrarybyEmptySea - Gateway Part1\patio_door_wood_glass_INT_hinge_creak_open_close_08.wav
+Sonniss GDC 2016 - Game Audio Bundle\3maze -  Doors, Locks and Drawers\door_open_004.wav
+Sonniss GDC 2015 - Game Audio Bundle TheLibrarybyEmptySea - Gateway Part1\patio_door_wood_glass_INT_hinge_creak_open_close_08.wav
+
+Spikes activation:
+Sonniss GDC 2023 - Game Audio Bundle \ BluezoneCorp - Annihilation - Mech \ Bluezone_BC0287_annihilation_mech_mechanical_texture_sequence_035.wav
 
 box push SFX:
 Sonniss.com 2023 - Game Audio Bundle \ Justsoundeffects - Metal Movements \ DOORHdwr_Big Metal Gate Pushbar Squeak 02_JSE_MM_Stereo.wav

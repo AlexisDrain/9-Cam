@@ -52,6 +52,11 @@ public class PlayerFootsteps : MonoBehaviour
     }
 
     public void PlayFootstep() {
+
+        if (GameManager.playerIsAlive == false) {
+            return;
+        }
+
         int stepSound = Random.Range(0, footsteps.Count);
         float randPitch = Random.Range(footstepPitch.x, footstepPitch.y);
         audioSourceFootsteps.clip = footsteps[stepSound];

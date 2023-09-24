@@ -12,6 +12,7 @@ public class EntityMover : MonoBehaviour
     public float moveSpeedToGoalPos = 10f;
     public float moveSpeedToOriginalPos = 2f;
     public Transform destinationTransform;
+    public bool loop = true;
 
     private float startDelayCurrent = 0f;
     private float restartDelayCurrent = 0f;
@@ -19,12 +20,17 @@ public class EntityMover : MonoBehaviour
     private Vector3 pos2;
     private bool goTo2 = true;
 
+    [Header("SFX")]
+    public AudioClip StartMoveAudioClip;
+    public AudioClip ReturnAudioClip;
+    public AudioClip EndMoveAudioClip;
+
     void Start() {
         startDelayCurrent = startDelay;
         pos1 = transform.position;
         pos2 = destinationTransform.position;
 
-        //GameManagerChasm.resetEnemyCollisions.AddListener(ResetEntity);
+        GameManager.playerRevive.AddListener(ResetEntity);
     }
     public void ResetEntity() {
         startDelayCurrent = startDelay;
@@ -32,6 +38,11 @@ public class EntityMover : MonoBehaviour
         transform.position = pos1;
     }
 
+    public void OverideMove() {
+        startDelayCurrent = 0;
+        restartDelayCurrent = 0;
+        GameManager.SpawnLoudAudio(StartMoveAudioClip);
+    }
 
     public void FixedUpdate() {
 
@@ -47,14 +58,29 @@ public class EntityMover : MonoBehaviour
         if (goTo2 == true && Vector3.Distance(transform.position, pos2) >= 0.2f) {
             transform.position = Vector3.MoveTowards(transform.position, pos2, Time.deltaTime * moveSpeedToGoalPos);
         } else if (goTo2 == true) {
+            if (ReturnAudioClip == true) {
+                GameManager.SpawnLoudAudio(ReturnAudioClip);
+            }
+
             restartDelayCurrent = restartDelayDefault;
             goTo2 = false;
         }
         if (goTo2 == false && Vector3.Distance(transform.position, pos1) >= 0.2f) {
             transform.position = Vector3.MoveTowards(transform.position, pos1, Time.deltaTime * moveSpeedToOriginalPos);
         } else if (goTo2 == false) {
-            restartDelayCurrent = restartDelayDefault;
+
             goTo2 = true;
+            if (EndMoveAudioClip == true) {
+                GameManager.SpawnLoudAudio(EndMoveAudioClip);
+            }
+            if (loop == true) { // spikes' loop is false so they only get activated
+                if (StartMoveAudioClip == true) {
+                    GameManager.SpawnLoudAudio(StartMoveAudioClip);
+                }
+                restartDelayCurrent = restartDelayDefault;
+            } else {
+                restartDelayCurrent = int.MaxValue;
+            }
         }
     }
 }
