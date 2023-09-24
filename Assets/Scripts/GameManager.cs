@@ -124,8 +124,10 @@ public class GameManager : MonoBehaviour
         GameManager.player.GetComponent<PlayerController>().graphicGirl.SetActive(false);
         GameManager.player.GetComponent<PlayerController>().shadow.SetActive(false);
 
-        GameObject gibs = GameManager.pool_Gibs.Spawn(GameManager.player.transform.position);
-        gibs.transform.rotation = GameManager.player.transform.rotation;
+        if(GameManager.currentLevel.GetComponent<LevelValues>().enableGibs == true) {
+            GameObject gibs = GameManager.pool_Gibs.Spawn(GameManager.player.transform.position);
+            gibs.transform.rotation = GameManager.player.transform.rotation;
+        }
     }
     public static void RevivePlayer() {
         playerIsAlive = true;

@@ -14,6 +14,9 @@ public class LevelValues : MonoBehaviour
     public bool isSomos = false;
     [Header("Story only")]
     public bool story1 = false;
+    [Header("Repeat only")]
+    public bool enableGibs = true;
+    
 
     void Start()
     {
