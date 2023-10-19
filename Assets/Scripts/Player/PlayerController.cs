@@ -46,7 +46,9 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetButton("Jump") && _onGround == true && canJumpAgain <= 0f) {
+            print("Do jump");
             canJumpAgain = 0.5f;
+            myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, 0f, myRigidbody.velocity.z);
             myRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
 
             // sfx

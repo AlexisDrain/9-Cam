@@ -10,6 +10,12 @@ Heavily inspired by the Halfquake Trilogy on Steam.
 ---------------------------
 [Credits]
 
+Music:
+muddasheep - broken heaven (feat. Lou Dunand-Vincent and Jared Powell)
+https://www.youtube.com/watch?v=4Q0ZJcz1Jso
+muddasheep - broken heaven (chillstep right in) (feat. Lou Dunand-Vincent and Jared Powell)
+https://www.youtube.com/watch?v=BrKF-8IURcs
+
 Textures:
 https://opengameart.org/content/2-seamless-lava-tiles
 https://opengameart.org/content/wall-grass-rock-stone-wood-and-dirt-480
