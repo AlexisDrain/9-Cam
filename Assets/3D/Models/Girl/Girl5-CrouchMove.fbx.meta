@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: DressBottom
-    second: {fileID: 2100000, guid: ff145d7a15fc4ea4f9ddd5fab2496ec4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: HairTexture
-    second: {fileID: 2100000, guid: e1ad42c18e32ac64cb2dd49efe9d6f49, type: 2}
+    second: {fileID: 2100000, guid: e7c0067a5fc5a044292b5a7ca706366e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
