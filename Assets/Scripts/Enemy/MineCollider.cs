@@ -12,7 +12,6 @@ public class MineCollider : MonoBehaviour
         GameManager.playerRevive.AddListener(ResetMine);
     }
     public void ResetMine() {
-        print("ResetMine");
         mineGameObject.GetComponent<MeshRenderer>().enabled = true;
         mineGameObject.GetComponent<Collider>().enabled = true;
         GetComponent<LineRenderer>().enabled = true;

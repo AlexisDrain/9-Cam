@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool _onGround = false;
     public int _isRotating = 0;
     private float canJumpAgain = 0f;
+    private bool tryUncrouch;
 
     [Header("SFX")]
     public AudioSource audioSourceFootsteps;
@@ -46,7 +47,6 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetButton("Jump") && _onGround == true && canJumpAgain <= 0f) {
-            print("Do jump");
             canJumpAgain = 0.5f;
             myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, 0f, myRigidbody.velocity.z);
             myRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
@@ -65,11 +65,18 @@ public class PlayerController : MonoBehaviour
         // crouch
         if (Input.GetButtonDown("Crouch")) {
             _isCrouching = true;
-            //girlAnimator.SetTrigger("Crouch");
         }
         if (Input.GetButtonUp("Crouch")) {
-            _isCrouching = false;
-            //girlAnimator.SetTrigger("Stand");
+            tryUncrouch = true;
+            //_isCrouching = false; this is done in the next line, AFTER checking there's nothing above player
+        }
+        if (tryUncrouch) {
+            RaycastHit hit;
+            Physics.Linecast(transform.position, transform.position + new Vector3(0f, 1.5f, 0f), out hit, (1 << GameManager.worldMask) + (1 << GameManager.entityMask));
+            if (hit.collider == null) {
+                tryUncrouch = false;
+                _isCrouching = false;
+            }
         }
     }
     // Update is called once per frame

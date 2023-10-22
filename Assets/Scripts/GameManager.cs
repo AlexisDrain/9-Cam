@@ -279,8 +279,6 @@ public class GameManager : MonoBehaviour
         GameManager.RevivePlayer();
     }
     public void NewGame() {
-        print("New Game: Spawn intro Level");
-
         gameHasBeenStartedOnce = true;
 
         SetNewLevel(0);
