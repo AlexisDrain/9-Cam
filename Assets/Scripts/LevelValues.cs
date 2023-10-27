@@ -12,10 +12,11 @@ public class LevelValues : MonoBehaviour
     [Header("Somos only")]
     public bool smoothCamBlends = false;
     public bool isSomos = false;
-    [Header("Story only")]
-    public bool story1 = false;
     [Header("Repeat only - Keep enabled for other levels")]
     public bool enableGibs = true;
+
+    //[Header("Story only")]
+    //public bool story1 = false;
     
 
     void Start()

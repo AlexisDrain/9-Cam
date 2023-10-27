@@ -8,88 +8,88 @@ A gloomy prison tries to contain you...
 Heavily inspired by the Halfquake Trilogy on Steam.
 
 ---------------------------
-[Credits]
+[Credits]  
 
 Music:
-muddasheep - broken heaven (feat. Lou Dunand-Vincent and Jared Powell)
-https://www.youtube.com/watch?v=4Q0ZJcz1Jso
-muddasheep - broken heaven (chillstep right in) (feat. Lou Dunand-Vincent and Jared Powell)
-https://www.youtube.com/watch?v=BrKF-8IURcs
+muddasheep - broken heaven (feat. Lou Dunand-Vincent and Jared Powell)  
+https://www.youtube.com/watch?v=4Q0ZJcz1Jso  
+muddasheep - broken heaven (chillstep right in) (feat. Lou Dunand-Vincent and Jared Powell)  
+https://www.youtube.com/watch?v=BrKF-8IURcs  
 
-Textures:
-https://opengameart.org/content/2-seamless-lava-tiles
-https://opengameart.org/content/wall-grass-rock-stone-wood-and-dirt-480
-Marble1:
-https://www.texturecan.com/details/110/
-Marble2:
-https://www.texturecan.com/details/106/
-Marble3 (Glass):
-https://www.texturecan.com/details/94/
-Metal:
-https://www.texturecan.com/details/611/
-Doors:
-<a href="https://www.freepik.com/free-vector/realistic-doors-collection-illustration_17806539.htm#query=door%20texture&position=3&from_view=keyword&track=ais">Image by pikisuperstar</a> on Freepik
+Textures:  
+https://opengameart.org/content/2-seamless-lava-tiles  
+https://opengameart.org/content/wall-grass-rock-stone-wood-and-dirt-480  
+Marble1:  
+https://www.texturecan.com/details/110/  
+Marble2:  
+https://www.texturecan.com/details/106/  
+Marble3 (Glass):  
+https://www.texturecan.com/details/94/  
+Metal:  
+https://www.texturecan.com/details/611/  
+Doors:  
+<a href="https://www.freepik.com/free-vector/realistic-doors-collection-illustration_17806539.htm#query=door%20texture&position=3&from_view=keyword&track=ais">Image by pikisuperstar</a> on Freepik  
 
-Fonts:
-- Roboto-Black - Apache License Version 2.0
-- Tschichold Alt Bold https://www.dafont.com/tschichold.font
+Paintings in Museum level:  
+Midjourney: https://www.midjourney.com/app/collections/4mI-g0TAQo6iiFb1okpyRA/  
+Voyager Golden Record:  
+https://commons.wikimedia.org/wiki/File:The_Sounds_of_Earth_-_GPN-2000-001976.jpg  
+https://commons.wikimedia.org/wiki/File:The_Sounds_of_Earth_Record_Cover_-_GPN-2000-001978.jpg  
 
-SFX:
-Ambiance (music?)
-Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1693 - Wobbling Waves- Endless Falling Loop.wav
-Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1672 - Tonal Elevator - Endless Rising Loop.wav
-Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1651 - Intergalactic Tension - Endless Falling Loop.wav
-Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1621 - Dissonant Surges - Endless Falling Loop.wav
-Sonniss GDC 2023 - Game Audio Bundle \ Ivo Vicic - Industrial gas boiler room\29 Industrial Gas  Boiler room_pipes_instalations_room in front_near.wa
+Fonts:  
+- Roboto-Black - Apache License Version 2.0  
+- Tschichold Alt Bold https://www.dafont.com/tschichold.font  
 
-Level transition Stinger [Unused. Replaced with Halfquake menu sfx]
-Sonniss 2016- Game Audio Bundle\Soundiron - Sick 6\sick6_stinger_elder-gods_04.wav
+SFX:  
+Ambiance  
+Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1693 - Wobbling Waves- Endless Falling Loop.wav  
+Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1672 - Tonal Elevator - Endless Rising Loop.wav  
+Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1651 - Intergalactic Tension - Endless Falling Loop.wav  
+Sonniss GDC 2018 - Game Audio Bundle \ The Sound Pack Tree - Shepard Ambiences\1621 - Dissonant Surges - Endless Falling Loop.wav  
+Sonniss GDC 2023 - Game Audio Bundle \ Ivo Vicic - Industrial gas boiler room\29 Industrial Gas  Boiler room_pipes_instalations_room in front_near.wav  
 
-Door open:
-Sonniss GDC 2016 - Game Audio Bundle\3maze -  Doors, Locks and Drawers\door_open_004.wav
-Sonniss GDC 2015 - Game Audio Bundle TheLibrarybyEmptySea - Gateway Part1\patio_door_wood_glass_INT_hinge_creak_open_close_08.wav
+Level transition Stinger [Unused. Replaced with Halfquake menu sfx]  
+Sonniss 2016- Game Audio Bundle\Soundiron - Sick 6\sick6_stinger_elder-gods_04.wav  
 
-Spikes activation:
-Sonniss GDC 2023 - Game Audio Bundle \ BluezoneCorp - Annihilation - Mech \ Bluezone_BC0287_annihilation_mech_mechanical_texture_sequence_035.wav
+Door open:  
+Sonniss GDC 2016 - Game Audio Bundle\3maze -  Doors, Locks and Drawers\door_open_004.wav  
+Sonniss GDC 2015 - Game Audio Bundle TheLibrarybyEmptySea - Gateway Part1\patio_door_wood_glass_INT_hinge_creak_open_close_08.wav  
 
-box push SFX:
-Sonniss.com 2023 - Game Audio Bundle \ Justsoundeffects - Metal Movements \ DOORHdwr_Big Metal Gate Pushbar Squeak 02_JSE_MM_Stereo.wav
+Spikes activation:  
+Sonniss GDC 2023 - Game Audio Bundle \ BluezoneCorp - Annihilation - Mech \ Bluezone_BC0287_annihilation_mech_mechanical_texture_sequence_035.wav  
 
-Glass break SFX:
-Sonniss.com 2015 - Game Audio Bundle\Soundopolis - Glass Smash Full\Glass_Break_ChampagneBottle_D50_Fienup_003.wav
+Glass break SFX:  
+Sonniss.com 2015 - Game Audio Bundle\Soundopolis - Glass Smash Full\Glass_Break_ChampagneBottle_D50_Fienup_003.wav  
 
-steam tap turn:
-https://freesound.org/people/FreqMan/sounds/31380/
-Sonniss.com 2020 - Game Audio Bundle\344 Audio - Supernatural Ghosts\Piercing Riser, Harsh, Metallic, Layer, Creepy, Horror 7.wav
+steam tap turn:  
+https://freesound.org/people/FreqMan/sounds/31380/  
+Sonniss.com 2020 - Game Audio Bundle\344 Audio - Supernatural Ghosts\Piercing Riser, Harsh, Metallic, Layer, Creepy, Horror 7.wav  
 
-Pipe smoke:
-Sonniss 2020 - Game Audio Bundle\SpillAudio - Bar and Coffee Shop\steam_007.wav
+Pipe smoke:  
+Sonniss 2020 - Game Audio Bundle\SpillAudio - Bar and Coffee Shop\steam_007.wav  
 
-Walking (bell) SFX:
-Sonnis 2018 \ The Chris Alan - Musical Oddities - Bells, Whistles, Horns, Percussion and More \ BELL TREE UP DOWN ERIE STYLISTIC VARIOUS SPEED LENGTH
+Walking (bell) SFX:  
+Sonnis 2018 \ The Chris Alan - Musical Oddities - Bells, Whistles, Horns, Percussion and More \ BELL TREE UP DOWN ERIE STYLISTIC VARIOUS SPEED LENGTH  
 
--Chainsaw SFX:
-Sonniss 2016 / Game Audio Bundle / SoundHolder - Chainsaw / chainsaw gas small engine gas pressing and sawing high rpm mono
+-Chainsaw SFX (Boss level):  
+Sonniss 2016 / Game Audio Bundle / SoundHolder - Chainsaw / chainsaw gas small engine gas pressing and sawing high rpm mono  
 
--Explosion SFX:
-Sonniss 2023 / BluezoneCorp - Detonation - Explosion / Bluezone_BC0277_explosion_urban_004_02
-Sonniss 2017 / Gamemaster Audio -  Explosion Sound Pack / explosion_large_no_tail_03
+-Explosion SFX:  
+Sonniss 2023 / BluezoneCorp - Detonation - Explosion / Bluezone_BC0277_explosion_urban_004_02  
+Sonniss 2017 / Gamemaster Audio -  Explosion Sound Pack / explosion_large_no_tail_03  
 
--Button SFX:
-Sonniss 2020 - Game Audio Bundle\Async Audio - Sci-Fi Blaster / Blast Laser 4
+-Button SFX:  
+Sonniss 2020 - Game Audio Bundle\Async Audio - Sci-Fi Blaster / Blast Laser 4  
 
-Gun shots:
-Sonniss 2016 \ Fascinated Sound - The Gun Locker SFX Pack \ Assault Rifle - M4 - 03 - Burst 03
-Sonniss 2017 \ gun_revolver_pistol_shot_04
+Gun shots:  
+Sonniss 2016 \ Fascinated Sound - The Gun Locker SFX Pack \ Assault Rifle - M4 - 03 - Burst 03  
+Sonniss 2017 \ gun_revolver_pistol_shot_04  
 
-Menu SFX. Level transition SFX:
-Halfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/
+Menu SFX. Level transition SFX:  
+Halfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/  
 
--Rock fall sound:
-Sonniss\Alexander Kopeikin - Rocks - rock tumble down debris long 06
+-Internet Dialup SFX  
+https://freesound.org/people/Jlew/sounds/16475/  
 
--Crunchy, chiptune sound effects like Lava:
-BFXR
-
--Internet Dialup SFX
-https://freesound.org/people/Jlew/sounds/16475/
+-Crunchy, chiptune sound effects like Lava:  
+BFXR  

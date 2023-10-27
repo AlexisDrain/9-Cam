@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public static TurretCamManager turretCamManager;
     public static GameObject canvasScreenTransition;
     public static GameObject canvasDeath;
+    public static StoryType canvasStoryType;
     public static GameObject canvasStory;
     public static GameObject canvasLevelName;
 
@@ -91,7 +92,7 @@ public class GameManager : MonoBehaviour
         canvasDeath = GameObject.Find("CanvasDeath");
         canvasDeath.SetActive(false);
         canvasStory = GameObject.Find("CanvasStory");
-        canvasStory.SetActive(false);
+        canvasStoryType = canvasStory.GetComponent<StoryType>();
         canvasLevelName = GameObject.Find("CanvasLevelName/BigLevelNameText");
         canvasLevelName.GetComponent<Text>().enabled = false;
 
@@ -263,13 +264,6 @@ public class GameManager : MonoBehaviour
             foreach (Transform child in mainCameras) {
                 child.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
             }
-        }
-
-        if (GameManager.currentLevel.GetComponent<LevelValues>().story1 == true) {
-            GameManager.canvasStory.SetActive(true);
-            GameManager.canvasStory.transform.Find("Background/FullScreenText").GetComponent<DialogueType>().StartTypewriter();
-        } else {
-            GameManager.canvasStory.SetActive(false);
         }
 
         GameManager.canvasTopRightTutorial.SetActive(false);
