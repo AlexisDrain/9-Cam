@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public static GameObject player;
     public static GameObject worldObj;
     public static GameObject canvasMenu;
+    public static GameObject buttonNewGame;
+    public static GameObject buttonResume;
     public static GameObject canvasTopRightTutorial;
     public static GameObject canvasCrouchTutorial;
     public static GameObject canvasJumpTutorial;
@@ -79,6 +81,8 @@ public class GameManager : MonoBehaviour
         player = GameObject.Find("Player");
         worldObj = GameObject.Find("World");
         canvasMenu = GameObject.Find("CanvasMenu");
+        buttonNewGame = GameObject.Find("CanvasMenu/Buttons_Left/Button_NewGame");
+        buttonResume = GameObject.Find("CanvasMenu/Buttons_Left/Button_Resume");
         canvasTopRightTutorial = GameObject.Find("CanvasTopRightTutorial");
         canvasTopRightTutorial.SetActive(false);
         canvasCrouchTutorial = GameObject.Find("CanvasCrouchTutorial");
@@ -214,6 +218,8 @@ public class GameManager : MonoBehaviour
     }
     // level changes starts with this function: SetNewLevel. It will call the other functions.
     public void SetNewLevel(int level) {
+        buttonNewGame.SetActive(false);
+        buttonResume.SetActive(true);
         currentLevelInt = level;
         StartCoroutine(ScreenTransition());
     }
