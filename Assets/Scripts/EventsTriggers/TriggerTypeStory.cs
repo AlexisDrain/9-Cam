@@ -15,7 +15,9 @@ public class TriggerTypeStory : MonoBehaviour
 
     IEnumerator TriggerStoryEnumerator() {
         yield return new WaitForSeconds(waitBeforeTyping);
-        GameManager.SpawnLoudAudio(startTypingAudio);
+        if (startTypingAudio != null) {
+            GameManager.SpawnLoudAudio(startTypingAudio);
+        }
         GameManager.canvasStoryType.StartTypewriter(storyIndexToType);
     }
 }
