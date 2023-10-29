@@ -17,5 +17,4 @@ public class TriggerLoadLevel : MonoBehaviour
 
         GameManager.gameManagerObj.GetComponent<GameManager>().SetNewLevel(newLevel);
     }
-
 }

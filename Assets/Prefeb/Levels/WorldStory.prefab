@@ -2928,6 +2928,7 @@ GameObject:
   - component: {fileID: 7670638543449222554}
   - component: {fileID: 6067276565218794752}
   - component: {fileID: 1244866641653551378}
+  - component: {fileID: 5505731741891645424}
   m_Layer: 8
   m_Name: Trigger_NextLevel
   m_TagString: Untagged
@@ -3308,6 +3309,18 @@ MonoBehaviour:
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5505731741891645424}
+        m_TargetAssemblyTypeName: TriggerUnlockMedal, Assembly-CSharp
+        m_MethodName: UnlockMedal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: someplaceElse
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 6067276565218794752}
         m_TargetAssemblyTypeName: TriggerLoadLevel, Assembly-CSharp
         m_MethodName: IncrementAndStartLevel
@@ -3324,6 +3337,18 @@ MonoBehaviour:
   resetWithPlayer: 0
   resetOnEnable: 0
   canBeReTriggered: 0
+--- !u!114 &5505731741891645424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2607244794770956250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c5c2ce057731946a67e5532cdc55df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2614685367869208099
 GameObject:
   m_ObjectHideFlags: 0
@@ -10867,13 +10892,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 1
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -11342,6 +11369,7 @@ MonoBehaviour:
   smoothCamBlends: 0
   isSomos: 0
   enableGibs: 1
+  fpsCamera: 0
 --- !u!1 &6590840127516044318
 GameObject:
   m_ObjectHideFlags: 0

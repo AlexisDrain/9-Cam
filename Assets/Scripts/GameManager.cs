@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     public static GameObject player;
     public static GameObject worldObj;
+    public static NGHelper ngHelper;
     public static GameObject canvasMenu;
     public static GameObject buttonNewGame;
     public static GameObject buttonResume;
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
 
         player = GameObject.Find("Player");
         worldObj = GameObject.Find("World");
+        ngHelper = transform.Find("NGHelper").GetComponent<NGHelper>();
         canvasMenu = GameObject.Find("CanvasMenu");
         buttonNewGame = GameObject.Find("CanvasMenu/Buttons_Left/Button_NewGame");
         buttonResume = GameObject.Find("CanvasMenu/Buttons_Left/Button_Resume");

@@ -53393,6 +53393,7 @@ GameObject:
   - component: {fileID: 2756241041065713289}
   - component: {fileID: 5406113091251318678}
   - component: {fileID: 1471612339193873650}
+  - component: {fileID: 2469263002045515197}
   m_Layer: 7
   m_Name: Trigger_ChangeLevel
   m_TagString: Untagged
@@ -53432,6 +53433,18 @@ MonoBehaviour:
   onTimeEnd:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2469263002045515197}
+        m_TargetAssemblyTypeName: TriggerUnlockMedal, Assembly-CSharp
+        m_MethodName: UnlockMedal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: somos
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1471612339193873650}
         m_TargetAssemblyTypeName: TriggerLoadLevel, Assembly-CSharp
         m_MethodName: IncrementAndStartLevel
@@ -53459,6 +53472,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca0a10c587d8d94f87d9a30c89c6f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2469263002045515197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8476577826217609416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c5c2ce057731946a67e5532cdc55df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8488020062184205301
@@ -53695,6 +53720,7 @@ MonoBehaviour:
   smoothCamBlends: 1
   isSomos: 1
   enableGibs: 1
+  fpsCamera: 0
 --- !u!1 &8614772717313061320
 GameObject:
   m_ObjectHideFlags: 0

@@ -1296,6 +1296,7 @@ GameObject:
   - component: {fileID: 7299550289035551168}
   - component: {fileID: 2960110481726390038}
   - component: {fileID: 8612900489251497726}
+  - component: {fileID: 5193609342660922867}
   m_Layer: 8
   m_Name: TriggerDoor_NextLevel
   m_TagString: Untagged
@@ -1688,6 +1689,18 @@ MonoBehaviour:
           m_StringArgument: OpenDoorNHandle
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5193609342660922867}
+        m_TargetAssemblyTypeName: TriggerUnlockMedal, Assembly-CSharp
+        m_MethodName: UnlockMedal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: turret
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerWithPlayer: 1
   resetWithPlayer: 1
   resetOnEnable: 1
@@ -1738,6 +1751,18 @@ MonoBehaviour:
   startOnEnable: 0
   startOnStart: 0
   restartTimerOnReset: 1
+--- !u!114 &5193609342660922867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565662797686362087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c5c2ce057731946a67e5532cdc55df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &806150295876822319
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,8 +4571,8 @@ MonoBehaviour:
   isTurret: 0
   smoothCamBlends: 0
   isSomos: 0
-  story1: 0
   enableGibs: 1
+  fpsCamera: 0
 --- !u!1 &3652360797817924414
 GameObject:
   m_ObjectHideFlags: 0
@@ -13904,13 +13929,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}

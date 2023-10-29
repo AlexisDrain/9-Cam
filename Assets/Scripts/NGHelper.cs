@@ -45,14 +45,26 @@ public class NGHelper : MonoBehaviour
 		print("Medal Unlocked");
 	}
 	*/
-    public void UnlockMedalNicky(string medal) {
+    public void UnlockMedal(string medal) {
 
         io.newgrounds.components.Medal.unlock medal_unlock = new io.newgrounds.components.Medal.unlock();
 		if(medal == "prison") {
-			medal_unlock.id = 73690;
+			medal_unlock.id = 75906;
 		} else if(medal == "turret") {
-            medal_unlock.id = 73690;
-        }
+            medal_unlock.id = 75907;
+        } else if (medal == "someplaceElse") {
+            medal_unlock.id = 75908;
+        } else if (medal == "repeat") {
+            medal_unlock.id = 75909;
+        } else if (medal == "laser") {
+            medal_unlock.id = 75910;
+        } else if (medal == "somos") {
+            medal_unlock.id = 75911;
+        } else if (medal == "theend") {
+            medal_unlock.id = 75912;
+        } else {
+			print("Medal not found");
+		}
 
         medal_unlock.callWith(ngio_core);
         print("Medal Unlocked: " + medal);
