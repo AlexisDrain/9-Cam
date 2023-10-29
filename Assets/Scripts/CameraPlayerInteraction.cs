@@ -31,6 +31,7 @@ public class CameraPlayerInteraction : MonoBehaviour
             Physics.Linecast(transform.position, GameManager.player.transform.position, out hit, (1 << GameManager.worldMask)+ (1 << GameManager.entityMask));
             if(hit.collider && hit.collider.CompareTag("Player")) {
                 GetComponent<CinemachineVirtualCamera>().LookAt = GameManager.player.transform;
+                GetComponent<CinemachineVirtualCamera>().Follow = GameManager.player.transform;
                 isLookingAtPlayer = true;
             }
         } else {

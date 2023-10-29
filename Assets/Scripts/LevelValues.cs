@@ -15,9 +15,9 @@ public class LevelValues : MonoBehaviour
     [Header("Repeat only - Keep enabled for other levels")]
     public bool enableGibs = true;
 
-    //[Header("Story only")]
-    //public bool story1 = false;
-    
+    [Header("Ending only")]
+    public bool fpsCamera = false;
+
 
     void Start()
     {

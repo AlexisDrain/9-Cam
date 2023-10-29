@@ -59,7 +59,8 @@ public class GameManager : MonoBehaviour
     public static Transform mainCameraTopLeft;
     public static Transform mainCameraTop;
     public static Transform mainCameraTopRight;
-
+    public static GameObject endingMainCam;
+    
     public static bool playerIsAlive = true;
     public static bool gameIsPaused = true;
     public static bool gameHasBeenStartedOnce = false;
@@ -110,6 +111,8 @@ public class GameManager : MonoBehaviour
         mainCameraTopLeft = GameObject.Find("MainCameras/7-TopLeft-MainCam").transform;
         mainCameraTop = GameObject.Find("MainCameras/8-Top-MainCam").transform;
         mainCameraTopRight = GameObject.Find("MainCameras/9-TopRight-MainCam").transform;
+        endingMainCam = GameObject.Find("Player/EndingMainCam");
+        endingMainCam.SetActive(false);
 
         worldMask = LayerMask.NameToLayer("World");
         entityMask = LayerMask.NameToLayer("Entity");
@@ -187,7 +190,10 @@ public class GameManager : MonoBehaviour
         } else {
             if (Input.GetButtonDown("Revive")) {
                 print("player is not dead but pressed Revive");
-                RevivePlayer();
+                if (currentLevelInt != 13) { // Hack: 13 is the The End level
+                    RevivePlayer();
+
+                }
             }
         }
 
@@ -271,6 +277,13 @@ public class GameManager : MonoBehaviour
                 child.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
             }
         }
+        // custom camera for The End level
+        if (GameManager.currentLevel.GetComponent<LevelValues>().fpsCamera == true) {
+            endingMainCam.SetActive(true);
+        } else {
+            endingMainCam.SetActive(false);
+        }
+        
 
         GameManager.canvasTopRightTutorial.SetActive(false);
         GameManager.canvasCrouchTutorial.SetActive(false);

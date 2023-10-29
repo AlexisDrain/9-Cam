@@ -88,6 +88,10 @@ Gun shots:
 Sonniss 2016 \ Fascinated Sound - The Gun Locker SFX Pack \ Assault Rifle - M4 - 03 - Burst 03  
 Sonniss 2017 \ gun_revolver_pistol_shot_04  
 
+Radio electricity SFX:
+Sonniss 2018 - Game Audio Bundle\Hear and Now Sound - High Voltage Electricity - The Essential Collection\Water and Electricity 7.wav
+Sonniss 2020 - Game Audio Bundle\Async Audio - Sci-Fi Blaster\Blast Laser 2.wav
+
 Menu SFX. Level transition SFX:  
 Halfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_Trilogy/  
 

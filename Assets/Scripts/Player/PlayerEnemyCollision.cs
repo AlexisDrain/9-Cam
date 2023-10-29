@@ -19,14 +19,12 @@ public class PlayerEnemyCollision : MonoBehaviour
 		}
 
         if (col.CompareTag("Enemy")) {
-            GetComponent<AudioSource>().clip = hurtAudioClip;
-            GetComponent<AudioSource>().PlayWebGL();
+            GameManager.SpawnLoudAudio(hurtAudioClip);
             GameManager.KillPlayer();
 			
 		}
 		if (col.CompareTag("Bullet")) {
-            GetComponent<AudioSource>().clip = hurtAudioClip;
-            GetComponent<AudioSource>().PlayWebGL();
+            GameManager.SpawnLoudAudio(hurtAudioClip);
             health -= 1;
 			if (health <= 0) {
                 GameManager.KillPlayer();
@@ -41,14 +39,12 @@ public class PlayerEnemyCollision : MonoBehaviour
         }
 
         if (col.collider.CompareTag("Enemy")) {
-            GetComponent<AudioSource>().clip = hurtAudioClip;
-            GetComponent<AudioSource>().PlayWebGL();
+            GameManager.SpawnLoudAudio(hurtAudioClip);
             GameManager.KillPlayer();
 
         }
         if (col.collider.CompareTag("Bullet")) {
-            GetComponent<AudioSource>().clip = hurtAudioClip;
-            GetComponent<AudioSource>().PlayWebGL();
+            GameManager.SpawnLoudAudio(hurtAudioClip);
             health -= 1;
             if (health <= 0) {
                 GameManager.KillPlayer();
