@@ -9,7 +9,7 @@ Heavily inspired by the Halfquake Trilogy on Steam.
 Walkthrough: YOUTUBE LINK or Github
 Full credits: Github link
 
-Controls (keyboard):  
+Controls [keyboard]:  
 P/Esc - Pause  
 R - Restart level
 (The player controls like a tank)
@@ -19,7 +19,7 @@ AD or Left and Right - Rotate
 Space or Z - Jump  
 C or Ctrl or Cmd - Crouch (useful for crouching under rotating chainsaws)  
 
-Controls (Xbox Gamepad):  
+Controls [Xbox Gamepad]:  
 d-pad for moving (Joysticks do not work)  
 A - Jump  
 B - Crouch  

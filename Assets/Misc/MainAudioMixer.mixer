@@ -104,6 +104,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 496c96d9aae18f24ab7620beb3f81856
+    name: FootstepsVolume
   - guid: 087ab811e66022d419f32c352796934b
     name: MusicVolume
   - guid: 239c8004cfaa05d4380a51d506e9c8f5

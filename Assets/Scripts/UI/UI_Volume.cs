@@ -14,22 +14,23 @@ public class UI_Volume : MonoBehaviour
 	public Text text_VolumeAmount;
     public Slider slider;
 	public bool music = true;
+    public bool footsteps = false;
 
-	public void VolumeIncreaseByPoint5() {
+    public void VolumeIncreaseByPoint5() {
         /* OldRange = (OldMax - OldMin)
 			NewRange = (NewMax - NewMin)
 			NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin */
         slider.value += 0.05f;
-        slider.value = Mathf.Clamp01(slider.value);
+        slider.value = Mathf.Clamp(slider.value, 0.001f, 1f);
 
-		UpdateValues();
+        UpdateValues();
     }
     public void VolumeDecreaseByPoint5() {
         /* OldRange = (OldMax - OldMin)
 			NewRange = (NewMax - NewMin)
 			NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin */
         slider.value -= 0.05f;
-        slider.value = Mathf.Clamp01(slider.value);
+        slider.value = Mathf.Clamp(slider.value, 0.001f, 1f);
 
         UpdateValues();
     }
@@ -40,13 +41,18 @@ public class UI_Volume : MonoBehaviour
 
         text_VolumeAmount.text = slider.value.ToString("0.00");
         if (music) {
-            audioMixer.SetFloat("MusicVolume", newMixerValue);
+            audioMixer.SetFloat("MusicVolume", Mathf.Log10 (slider.value) * 20f);
+        } else if (footsteps) {
+            audioMixer.SetFloat("FootstepsVolume", Mathf.Log10(slider.value) * 20f);
         } else {
-            audioMixer.SetFloat("SFXVolume", newMixerValue);
+            print(slider.value);
+            print(Mathf.Log10(slider.value));
+            audioMixer.SetFloat("SFXVolume", Mathf.Log10(slider.value) * 20f);
         }
     }
 
     // Old
+    /*
 	public void SetMusicVolume(float newVolume) {
 
 		audioMixer.SetFloat("MusicVolume", newVolume);
@@ -56,5 +62,6 @@ public class UI_Volume : MonoBehaviour
 		audioMixer.SetFloat("SFXVolume", newVolume);
 
 	}
+    */
 
 }

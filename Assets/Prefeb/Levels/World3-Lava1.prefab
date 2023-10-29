@@ -9726,7 +9726,7 @@ AudioSource:
   m_GameObject: {fileID: 6085743463570984893}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2133023030816354152, guid: 74c75a232f652ec48bb81dc4a7654b47, type: 2}
+  OutputAudioMixerGroup: {fileID: -6117401089222027472, guid: 74c75a232f652ec48bb81dc4a7654b47, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0c8db4309ee66b74c8c0d6f17c9e5e61, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
@@ -10424,6 +10424,7 @@ MonoBehaviour:
   smoothCamBlends: 0
   isSomos: 0
   enableGibs: 1
+  fpsCamera: 0
 --- !u!1 &6712115934032248921
 GameObject:
   m_ObjectHideFlags: 0
