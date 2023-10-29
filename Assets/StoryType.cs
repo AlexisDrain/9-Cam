@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StoryType : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class StoryType : MonoBehaviour
     public string story7 = "";
 
     private string finalText = "";
-    public Text myText;
+    public TextMeshProUGUI myText;
     private Canvas myCanvas;
 
     private void Start() {

@@ -43,6 +43,9 @@ public class PlayerController : MonoBehaviour
     }
     private void Update() {
         if (GameManager.playerIsAlive == false) {
+            _onGround = false;
+            tryUncrouch = false;
+            _isCrouching = false;
             return;
         }
 
