@@ -23,7 +23,7 @@ W or Up - Move forward
 S or Down - Move Backwards  
 AD or Left and Right - Rotate  
 Space or Z - Jump  
-C or Ctrl or Cmd - Crouch (useful for crouching under rotating chainsaws)  
+C or Shift - Crouch (useful for crouching under rotating chainsaws)  
 
 Controls [Xbox Gamepad]:  
 d-pad for moving (Joysticks do not work)  
