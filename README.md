@@ -1,6 +1,6 @@
 # 9-Cam  
 Web game playable at Newgrounds or Itch  
-https://www.newgrounds.com/portal/view/project/5002513  
+https://www.newgrounds.com/portal/view/904765  
 
 Downloadable Windows version:  
 https://alexclay.itch.io/9-cam  
