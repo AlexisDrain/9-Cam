@@ -6,8 +6,9 @@
 3D puzzle platformer. A gloomy prison tries to contain you...
 Heavily inspired by the Halfquake Trilogy on Steam.
 
-Walkthrough: YOUTUBE LINK or Github
-Full credits: Github link
+Fullscreen mode can make the game run laggy. If you have performance issues, disable fullscreen or try the downloadable Windows version on Itch.: https://alexclay.itch.io/9-cam
+Full credits + Source code: https://github.com/AlexisDrain/9-Cam
+Video walkthrough: https://www.youtube.com/watch?v=tAFeTpBDEYU
 
 Controls [keyboard]:  
 P/Esc - Pause  
