@@ -28,6 +28,9 @@ Y - Restart level
 ---------------------------
 [Credits]  
 
+A game by Alexis Clay:
+https://alexclay.itch.io/
+
 Music:
 -muddasheep - broken heaven (feat. Lou Dunand-Vincent and Jared Powell)  
 https://www.youtube.com/watch?v=4Q0ZJcz1Jso  
@@ -113,5 +116,5 @@ Halfquake 1 by Muddasheep: https://store.steampowered.com/app/644320/Halfquake_T
 -Internet Dialup SFX  
 https://freesound.org/people/Jlew/sounds/16475/  
 
--Crunchy, chiptune sound effects like Lava:  
+-Crunchy, chiptune sound effects like intro explosion:  
 BFXR  

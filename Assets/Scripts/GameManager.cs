@@ -84,8 +84,8 @@ public class GameManager : MonoBehaviour
         worldObj = GameObject.Find("World");
         ngHelper = transform.Find("NGHelper").GetComponent<NGHelper>();
         canvasMenu = GameObject.Find("CanvasMenu");
-        buttonNewGame = GameObject.Find("CanvasMenu/Buttons_Left/Button_NewGame");
-        buttonResume = GameObject.Find("CanvasMenu/Buttons_Left/Button_Resume");
+        buttonNewGame = GameObject.Find("CanvasMenu/MainMenu/Buttons_Left/Button_NewGame");
+        buttonResume = GameObject.Find("CanvasMenu/MainMenu/Buttons_Left/Button_Resume");
         canvasTopRightTutorial = GameObject.Find("CanvasTopRightTutorial");
         canvasTopRightTutorial.SetActive(false);
         canvasCrouchTutorial = GameObject.Find("CanvasCrouchTutorial");

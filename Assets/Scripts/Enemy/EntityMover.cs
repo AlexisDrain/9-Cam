@@ -13,6 +13,7 @@ public class EntityMover : MonoBehaviour
     public float moveSpeedToOriginalPos = 2f;
     public Transform destinationTransform;
     public bool loop = true;
+    public bool resetWithPlayer = true;
 
     private float startDelayCurrent = 0f;
     private float restartDelayCurrent = 0f;
@@ -30,7 +31,9 @@ public class EntityMover : MonoBehaviour
         pos1 = transform.position;
         pos2 = destinationTransform.position;
 
-        GameManager.playerRevive.AddListener(ResetEntity);
+        if (resetWithPlayer) {
+            GameManager.playerRevive.AddListener(ResetEntity);
+        }
     }
     public void ResetEntity() {
         startDelayCurrent = startDelay;
