@@ -1,10 +1,17 @@
 # 9-Cam  
 Web game playable at Newgrounds or Itch  
 https://www.newgrounds.com/portal/view/project/5002513  
+
+Downloadable Windows version:  
 https://alexclay.itch.io/9-cam  
+
+Video walkthrough:  
+https://www.youtube.com/watch?v=tAFeTpBDEYU  
 
 3D puzzle platformer. A gloomy prison tries to contain you...  
 Heavily inspired by the Halfquake Trilogy on Steam.  
+
+Fullscreen mode can make the game run laggy. If you have performance issues, disable fullscreen or try the downloadable Windows version on Itch.  
 
 --------------------
 
