@@ -2579,7 +2579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyIndexToType: 6
   startTypingAudio: {fileID: 8300000, guid: d2855a49830404044a1dfe5f0ee18287, type: 3}
-  waitBeforeTyping: 8
+  waitBeforeTyping: 15
 --- !u!114 &5344265694679227843
 MonoBehaviour:
   m_ObjectHideFlags: 0
