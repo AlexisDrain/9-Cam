@@ -282,6 +282,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tutorialCrouch_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 19
+        width: 98
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ffac6f058864e4890a6df50a2ae9dc
+      internalID: -1314681559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -300,6 +321,7 @@ TextureImporter:
       tutorialCrouch_4: -422289001
       tutorialCrouch_5: 2061197718
       tutorialCrouch_6: -408654536
+      tutorialCrouch_7: -1314681559
       tutorial_0: 771519690
       tutorial_1: -2144570464
       tutorial_10: -1216851548
